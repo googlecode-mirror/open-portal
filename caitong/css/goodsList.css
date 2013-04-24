@@ -1,0 +1,25 @@
+/* CSS Document */
+.ct_middle_goods_list table{
+	border : 1px solid #C4C5A6;
+}
+.ct_middle_goods_list table td{
+	border : 0px;
+}
+.ct_type_pageInfo{
+	height:35px;
+	line-height:35px;
+	width:680px;
+	text-align:right;
+}
+.ct_type_sub_list{
+	min-width : 100px;
+	float:left;
+	height:30px;
+	line-height:30px;
+	margin:5px;
+	text-align:center;
+	border:1px dashed #C4C5A6;
+}
+.ct_type_sub_list a{
+	display:block;
+}

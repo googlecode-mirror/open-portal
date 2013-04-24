@@ -1,0 +1,36 @@
+.ct_shop_cart{
+	width  : 700px;
+	border:1px solid #C4C5A6;
+}
+.ct_shop_cart table{
+	font-size:12px;
+}
+.ct_shop_cart_title{
+	background-image:url(../images/lm_bg.png);
+	height:33px;
+	background-repeat:repeat-x;
+}
+.ct_shop_cart td{
+	text-align:center;
+}
+
+.ct_shop_cart_row td{
+	padding:10px;
+}
+.ct_sum_price_info{
+	width:700px;
+	margin-top:10px;
+}
+.ct_continue_shop{
+	float:left;
+	width:200px;
+	height:100px;
+}
+.ct_sum_pay_info {
+	width:400px;
+	height:100px;
+	float:right;
+	text-align:right;
+	padding:10px;
+	line-height:20px;
+}

@@ -58,7 +58,7 @@
 									<td>
 										<div class="num_and_cart">
 											购买数量：<input type="text" size="5" value="5">
-											<div class = "add_to_cart_info"><a href = "#">Add to Cart</a></div>
+											<div class = "add_to_cart_info"><a href = "shopCart.php">Add to Cart</a></div>
 										</div>
 									</td>
 								</tr>
@@ -80,6 +80,13 @@
 						</div>
 					</div>
 				</td>
+			</tr>
+			<tr>
+				<td>
+					<?php
+						require_once("copy.php");
+					?>
+				</td>	
 			</tr>
 		</table>
 	</div>

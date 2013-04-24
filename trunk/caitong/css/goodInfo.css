@@ -1,0 +1,60 @@
+/* CSS Document */
+.ct_good_img{
+	width : 350px;
+	height: 350px;
+	border:1px solid #C4C5A6;
+	float:left;
+}
+.ct_good_info{
+	float:right;
+	width:320px;
+	height:300px;
+	font-size:13px;
+}
+.num_and_cart{
+	width : 200px;
+	height:80px;
+	border:1px dashed #C4C5A6;
+	padding:10px;
+	margin-top: 25px;
+	background-color:#FFFF99;
+}
+.add_to_cart_info{
+	background-image:url(../images/btn_bg.gif);
+	background-repeat:no-repeat;
+	width:90px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	margin-top:20px;
+}
+.add_to_cart_info a{
+	display:block;
+	color:white;
+}
+.ct_good_detail{
+	width : 700px;
+	height:100px;
+	margin-top:15px;
+}
+.good_detail_title{
+	width : 698px;
+	height:35px;
+}
+.good_detail_tab, .good_alsolike_tab {
+	width : 80px;
+	height:32px;
+	line-height:35px;
+	text-align:center;
+	border: 1px solid #C4C5A6;
+	cursor:pointer;
+	background-color:#FFCC33;
+	border-top:3px solid #FF6600;
+	float : left;
+	font-weight:bold;
+}
+.ct_good_detail_body{
+	width : 698px;
+	border:1px solid #C4C5A6;
+	height: 400px;
+}

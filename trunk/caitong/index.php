@@ -30,66 +30,66 @@
 					</div>
 					<div class="ct_goods_info">
 						 <ul>
-						    <li><a href = "#"><img src="images/goods.gif" width="125" height="100" /></a></li>
+						    <li><a href = "goodInfo.php"><img src="images/goods.gif" width="125" height="100" /></a></li>
 						    <li><font color = "#38B0E3">HTC Touch HD</font></li>
 						    <li>RMB 200</li>
-						    <li class = "add_to_cart"><a href = "#">Add to Cart</a></li>
+						    <li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
 						  </ul>
 					</div>
 					<div class="ct_goods_info">
 						 <ul>
-						    <li><a href = "#"><img src = "images/goods.gif" width="125" height="100"  /></a></li>
+						    <li><a href = "goodInfo.php"><img src="images/goods.gif" width="125" height="100"  /></a></li>
 						    <li><font color = "#38B0E3">HTC Touch HD</font></li>
 						    <li>RMB 200</li>
-						    <li class = "add_to_cart"><a href = "#">Add to Cart</a></li>
+						    <li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
 						  </ul>
 					</div>
 					<div class="ct_goods_info">
 						 <ul>
-						    <li><a href = "#"><img src = "images/goods.gif"  width="125" height="100" /></a></li>
+						    <li><a href = "goodInfo.php"><img src="images/goods.gif"  width="125" height="100" /></a></li>
 						    <li><font color = "#38B0E3">HTC Touch HD</font></li>
 						    <li>RMB 200</li>
-						    <li class = "add_to_cart"><a href = "#">Add to Cart</a></li>
+						    <li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
 						  </ul>
 					</div>
 					<div class="ct_goods_info">
 						 <ul>
-						    <li><a href = "#"><img src = "images/goods.gif"  width="125" height="100" /></a></li>
+						    <li><a href = "goodInfo.php"><img src="images/goods.gif"  width="125" height="100" /></a></li>
 						    <li><font color = "#38B0E3">HTC Touch HD</font></li>
 						    <li>RMB 200</li>
-						    <li class = "add_to_cart"><a href = "#">Add to Cart</a></li>
+						    <li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
 						  </ul>
 					</div>
 					<div class="ct_goods_info">
 						 <ul>
-						    <li><a href = "#"><img src = "images/goods.gif"  width="125" height="100" /></a></li>
+						    <li><a href = "goodInfo.php"><img src="images/goods.gif"  width="125" height="100" /></a></li>
 						    <li><font color = "#38B0E3">HTC Touch HD</font></li>
 						    <li>RMB 200</li>
-						    <li class = "add_to_cart"><a href = "#">Add to Cart</a></li>
+						    <li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
 						  </ul>
 					</div>
 					<div class="ct_goods_info">
 						 <ul>
-						    <li><a href = "#"><img src = "images/goods.gif"  width="125" height="100" /></a></li>
+						    <li><a href = "goodInfo.php"><img src="images/goods.gif"  width="125" height="100" /></a></li>
 						    <li><font color = "#38B0E3">HTC Touch HD</font></li>
 						    <li>RMB 200</li>
-						    <li class = "add_to_cart"><a href = "#">Add to Cart</a></li>
+						    <li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
 						  </ul>
 					</div>
 					<div class="ct_goods_info">
 						 <ul>
-						    <li><a href = "#"><img src = "images/goods.gif"  width="125" height="100" /></a></li>
+						    <li><a href = "goodInfo.php"><img src="images/goods.gif"  width="125" height="100" /></a></li>
 						    <li><font color = "#38B0E3">HTC Touch HD</font></li>
 						    <li>RMB 200</li>
-						    <li class = "add_to_cart"><a href = "#">Add to Cart</a></li>
+						    <li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
 						  </ul>
 					</div>
 					<div class="ct_goods_info">
 						 <ul>
-						    <li><a href = "#"><img src = "images/goods.gif"  width="125" height="100" /></a></li>
+						    <li><a href = "goodInfo.php"><img src="images/goods.gif"  width="125" height="100" /></a></li>
 						    <li><font color = "#38B0E3">HTC Touch HD</font></li>
 						    <li>RMB 200</li>
-						    <li class = "add_to_cart"><a href = "#">Add to Cart</a></li>
+						    <li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
 						  </ul>
 					</div>
 				</div>

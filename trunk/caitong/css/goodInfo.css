@@ -19,19 +19,6 @@
 	margin-top: 25px;
 	background-color:#FFFF99;
 }
-.add_to_cart_info{
-	background-image:url(../images/btn_bg.gif);
-	background-repeat:no-repeat;
-	width:90px;
-	height:28px;
-	line-height:28px;
-	text-align:center;
-	margin-top:20px;
-}
-.add_to_cart_info a{
-	display:block;
-	color:white;
-}
 .ct_good_detail{
 	width : 700px;
 	height:100px;

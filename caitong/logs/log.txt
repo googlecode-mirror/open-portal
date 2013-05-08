@@ -1,0 +1,15 @@
+[2013-05-05 11:56:41][INFO][index.php]:testing mes
+[2013-05-05 11:56:41][WARN][index.php]:oh no warning
+[2013-05-05 11:56:41][TRACE][index.php]:hei hei tracing
+[2013-05-05 11:56:42][INFO][index.php]:testing mes
+[2013-05-05 11:56:42][WARN][index.php]:oh no warning
+[2013-05-05 11:56:42][TRACE][index.php]:hei hei tracing
+[2013-05-05 11:58:58][INFO][index.php]:testing mes
+[2013-05-05 11:58:58][WARN][index.php]:oh no warning
+[2013-05-05 11:58:58][TRACE][index.php]:hei hei tracing
+[2013-05-05 11:58:58][DEBUG][index]:just debug
+[2013-05-05 11:59:40][INFO][index.php]:testing mes
+[2013-05-05 11:59:40][WARN][index.php]:oh no warning
+[2013-05-05 11:59:40][TRACE][index.php]:hei hei tracing
+[2013-05-05 11:59:40][DEBUG][index]:just debug
+[2013-05-05 11:59:40][DEBUG][index]:just debug, 只是debug，不用怕

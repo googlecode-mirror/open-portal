@@ -59,7 +59,11 @@ class Application {
 	
 	// 初始化数据库
 	private function initDatabase() {
-		database::init($config["db"]);
+		if(isset($config["db"])){
+			database::init($config["db"]);
+		}else{
+			database::init($db_config);
+		}
 	}
 	
 	// 初始化日志

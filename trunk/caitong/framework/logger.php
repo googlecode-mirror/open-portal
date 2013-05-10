@@ -62,7 +62,7 @@ class logger {
 	}
 	
 	private static function make_log_entry($info) {
-		$info['time'] = date('Y-m-d H:i:s');
+		$info['time'] = gmdate('Y-m-d H:i:s');
 		return $info;
 	}
 	

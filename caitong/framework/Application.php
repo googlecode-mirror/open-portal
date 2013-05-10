@@ -1,73 +1,91 @@
 <?php
 //
-//  Application类
+//  Application
 //
 
+
+define('APP_ROOT', substr(__DIR__, 0, -10));
+
+require APP_ROOT . "/framework/classloader.php";
+
 class Application {
-	
-	/**
-	 ** 配置类
-	 ** @var  Array
-	 **/
-	private $config;
-	
-	// 应用名称
-	// @var  String
-	private $appName;
-	
-    // 类加载程序
-	private $loader;
-	
-	public function __construct($appName, $config = array()) {
-		$this->config = $config;
+        
+        /**
+         ** 
+         ** @var  Array
+         **/
+        private $config;
+        
+        // 
+        // @var  String
+        private $appName;
 		
-	}
-	
-	// 返回配置信息
-	// @var  Array
-	public function getConfig() {
-		return $this->config;
-	}
-	
-	// 初始化应用程序
-	// @return  
-	public function init() {
-		$this->initEnv();
-		$this->initDatabase();
-		$this->initLogger();
-		return $this;
-	}
-	
-	public function run() {
-		$module = $_GET["mod"];
-		$action = $_GET["act"];
+		// 
+		// $var Context
+		private $ctx;
+        
+    // 
+        private $loader;
+        
+        public function __construct($appName, $config) {
+                $this->config = $config;
+                $this->appName = $appName;
+        }
+        
+        // 
+        // @var  Array
+        public function getConfig() {
+                return $this->config;
+        }
 		
-		// TODO: can do some filter here
-		
-		$dispatcher = new RequestDispatch($this, $module, $action);
-		$dispatcher.dispatch();
-	}
-	
-	//
-	// private methods
-	//
-	
-	// 初始化环境参数
-	private function initEnv() {
-		$this->loader = new classloader();
-	}
-	
-	// 初始化数据库
-	private function initDatabase() {
-		if(isset($config["db"])){
-			database::init($config["db"]);
-		}else{
-			database::init($db_config);
+		public function getName() {
+			return $this->appName;
 		}
-	}
-	
-	// 初始化日志
-	private function initLogger() {
-		logger::init(array());
-	}
+        
+        // 
+        // @return  
+        public function init() {
+                $this->initEnv();
+                $this->initDatabase();
+                $this->initLogger();
+                return $this;
+        }
+        
+        public function run() {
+                $module = $_GET["act"];
+                $action = $_GET["method"];
+                
+                // TODO: can do some filter here
+                
+                $dispatcher = new RequestDispatcher($this, $module, $action);
+                $dispatcher->dispatch();
+        }
+        
+		public function setContext($ctx) {
+			$this->ctx = $ctx;
+		}
+		
+        //
+        // private methods
+        //
+        
+        // 
+        private function initEnv() {
+			// define constants
+			error_reporting(E_ALL);
+			ini_set('display_errors', true);
+			ini_set('html_errors', false);
+			date_default_timezone_set($this->getConfig()["time_zone"]);
+            $this->loader = new classloader();
+        }
+        
+        // 
+        private function initDatabase() {
+                database::init($this->config["db"]);
+        }
+        
+        // 
+        private function initLogger() {
+                logger::init(array());
+        }
 }

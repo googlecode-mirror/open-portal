@@ -6,6 +6,15 @@
 class Context {
 	
 	private $appRoot;
+	private $appName;
+	
+	public function __construct($appName) {
+		$this->appName = $appName;	
+	}
+	
+	public function appName() {
+		return $this->appName;
+	}
 	
 	//
 	public function appRoot() {

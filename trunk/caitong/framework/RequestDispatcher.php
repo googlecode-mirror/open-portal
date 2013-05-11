@@ -34,7 +34,7 @@ class RequestDispatcher {
         
 		// 加载Action类
         private function loadModule($module) {
-			$loader = new ModuleLoader($this->appName);
+			$loader = new ModuleLoader();
 			
 			if (!$loader->isModuleExists($module)) {
 					throw new Exception("$module not found");

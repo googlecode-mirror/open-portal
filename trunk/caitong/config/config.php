@@ -1,6 +1,6 @@
 <?php
 
-// Êý¾Ý¿âÅäÖÃ
+// æ•°æ®åº“é…ç½®
 $config["db"]["dbhost"] = "localhost";
 $config["db"]["dbuser"] = "root";
 $config["db"]["dbpwd"] = "";
@@ -8,8 +8,16 @@ $config["db"]["dbname"] = "test";
 $config["db"]["dbcharset"] = "utf-8";
 $config["db"]["pconnect"] = "0";
 
-// Ê±Çø
+// æ—¶åŒº
 $config["time_zone"] = "Asia/Chongqing";
 
-// Ö÷Ìâ
+// ä¸»é¢˜
 $config["theme"] = "default";
+
+// è¡¨å‰ç¼€
+$config["table_prefix"] = "tbl";
+
+// è¡¨å
+$config["tables"]["goodInfo"] = "goodInfo";
+$config["tables"]["goodType"] = "goodType";
+$config["tables"]["goodPrice"] = "goodPrice";

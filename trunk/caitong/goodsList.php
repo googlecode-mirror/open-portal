@@ -26,41 +26,7 @@
 			<div class="ct_middle_right">
 			<!-- 商品展示开始 -->
 				<div class = "ct_middle_goods_list">
-					<table width="200" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:10px;">
-					    <tr>
-							<td>
-								<div class = "ct_middle_goods_title" style="font-weight:normal;font-size:12px;">
-									<div style = "float:left;"><img src = "images/location_hot.gif" />&nbsp;<b>迷你精品</b></div>
-									
-								</div>
-							</td>
-						</tr>
-						<tr style="min-height:50px;">
-							<td>
-								<div class="ct_type_sub_list">
-									<a href="goodsList.php">&nbsp;&gt;&gt;人生几何&nbsp;</a>
-								</div>
-								<div class="ct_type_sub_list">
-									<a href="goodsList.php">&nbsp;&gt;&gt;人生几何&nbsp;</a>
-								</div>
-								<div class="ct_type_sub_list">
-									<a href="goodsList.php">&nbsp;&gt;&gt;人生几何&nbsp;</a>
-								</div>
-								<div class="ct_type_sub_list">
-									<a href="goodsList.php">&nbsp;&gt;&gt;人生几何&nbsp;</a>
-								</div>
-								<div class="ct_type_sub_list">
-									<a href="goodsList.php">&nbsp;&gt;&gt;人生几何&nbsp;</a>
-								</div>
-								<div class="ct_type_sub_list">
-									<a href="goodsList.php">&nbsp;&gt;&gt;人生几何&nbsp;</a>
-								</div>
-								<div class="ct_type_sub_list">
-									<a href="goodsList.php">&nbsp;&gt;&gt;人生几何&nbsp;</a>
-								</div>
-							</td>
-						</tr>
-					</table>
+					
 					<table width="200" border="0" cellpadding="0" cellspacing="0">
 					  <tr>
 						<td>

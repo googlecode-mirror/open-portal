@@ -7,8 +7,8 @@ class ModuleLoader {
         
 		private $appName;
 		
-        public function __construct($appName) {
-			$this->appName = $appName;
+        public function __construct() {
+			$this->appName = C::ctx()->appName();
         }
         
         // 

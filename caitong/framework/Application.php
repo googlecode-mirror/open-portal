@@ -6,8 +6,6 @@
 
 define('APP_ROOT', substr(__DIR__, 0, -10));
 
-require APP_ROOT . "/framework/classloader.php";
-
 class Application {
         
         /**
@@ -24,12 +22,10 @@ class Application {
 		// $var Context
 		private $ctx;
         
-    // 
-        private $loader;
         
-        public function __construct($appName, $config) {
+        public function __construct($config) {
                 $this->config = $config;
-                $this->appName = $appName;
+                $this->appName = C::ctx()->appName();
         }
         
         // 
@@ -76,7 +72,7 @@ class Application {
 			ini_set('display_errors', true);
 			ini_set('html_errors', false);
 			date_default_timezone_set($this->getConfig()["time_zone"]);
-            $this->loader = new classloader();
+           
         }
         
         // 

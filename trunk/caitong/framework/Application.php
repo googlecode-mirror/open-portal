@@ -71,7 +71,7 @@ class Application {
 			error_reporting(E_ALL);
 			ini_set('display_errors', true);
 			ini_set('html_errors', false);
-			date_default_timezone_set($this->getConfig()["time_zone"]);
+			date_default_timezone_set($this->config["time_zone"]);
            
         }
         

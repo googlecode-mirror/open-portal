@@ -1,3 +1,87 @@
+insert into tbl_goodtype values (1, 0, '电脑整机');
+
+insert into tbl_goodtype values (2, 0, '电脑配件');
+
+insert into tbl_goodtype values (3, 0, '外设产品');
+
+insert into tbl_goodtype values (4, 0, '网络产品');
+
+insert into tbl_goodtype values (11, 1, '笔记本');
+insert into tbl_goodtype values (12, 1, '超级本');
+insert into tbl_goodtype values (13, 1, '平板电脑');
+insert into tbl_goodtype values (14, 1, '台式机');
+insert into tbl_goodtype values (15, 1, '服务器');
+
+insert into tbl_goodtype values (21, 2, 'CPU');
+insert into tbl_goodtype values (22, 2, '主板');
+insert into tbl_goodtype values (23, 2, '显卡');
+insert into tbl_goodtype values (24, 2, '硬盘');
+insert into tbl_goodtype values (25, 2, '内存');
+insert into tbl_goodtype values (26, 2, '机箱电源');
+insert into tbl_goodtype values (27, 2, '显示器');
+
+insert into tbl_goodtype values (31, 3, '鼠标');
+insert into tbl_goodtype values (32, 3, '键盘');
+insert into tbl_goodtype values (33, 3, '移动硬盘');
+insert into tbl_goodtype values (34, 3, 'U盘');
+insert into tbl_goodtype values (35, 3, '摄像头');
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-1',11,'Macbook pro 1 china','Macbook pro 1 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-2',11,'Macbook pro 2 china','Macbook pro 2 USA','170017','item-2.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-3',11,'Macbook pro 3 china','Macbook pro 3 USA','170017','item-3.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-4',11,'Macbook pro 4 china','Macbook pro 4 USA','170017','item-4.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-5',11,'Macbook pro 5 china','Macbook pro 5 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-6',11,'Macbook pro 6 china','Macbook pro 6 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-7',11,'Macbook pro 7 china','Macbook pro 7 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-8',11,'Macbook pro 8 china','Macbook pro 8 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-9',11,'Macbook pro 9 china','Macbook pro 9 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-10',11,'Macbook pro 10 china','Macbook pro 10 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-11',11,'Macbook pro 11 china','Macbook pro 11 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-12',11,'Macbook pro 12 china','Macbook pro 12 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-13',11,'Macbook pro 13 china','Macbook pro 13 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-14',11,'Macbook pro 14 china','Macbook pro 14 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-15',11,'Macbook pro 15 china','Macbook pro 15 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-16',11,'Macbook pro 16 china','Macbook pro 16 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-17',11,'Macbook pro 17 china','Macbook pro 17 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+INSERT INTO `tbl_goodinfo`(`gd_id`, `gt_id`, `gd_zhName`, `gd_enName`, `gd_model`, `gd_littleImg`, `gd_adddate`, `gd_remark`, `gd_adder`, `gd_del`) 
+VALUES ('item-18',11,'Macbook pro 18 china','Macbook pro 18 USA','170017','item-1.jpg',null,'Macbook pro 1 <br> Macbook pro 1 <br>','admin',0);
+
+
+
 insert into tbl_goodType (gt_id, gt_parentId, gt_name) values (16, 3, 'R14WM8LT3QYU3XJB88JE8 T76EE37G38LW4C21ILLA74WLPCHRT74 RBLI2WXQ8VDH2NYDH7G571W9182JOKF31066V 2YT5BG78B9RB QX3UW0UK VDVGNP36OSJOL4F5WEJU0Y77APUKLIDBADHA');
 
 insert into tbl_goodType (gt_id, gt_parentId, gt_name) values (2, 14, '24AYHOJJSCEHFC9HJM 9946HAWMAQ8H1BGFLBXJC6NU485EN37VBUMH355AC5GH8YA3T5NB34E2BOV501 AH5ANYSR0LGLBM3LJ02XWWE9508F0B6MFG65VR9MDTLY32BSS96SK3FE0TDMQKY98L24');

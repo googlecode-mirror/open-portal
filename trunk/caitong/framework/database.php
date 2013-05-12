@@ -118,6 +118,49 @@ class database {
 	}
 	
 	/**
+	 * 根据字段名和值生产过滤语句
+	 * 返回如下的过滤语句:
+	 * name = 'a'
+	 * id > '10'
+	 * id IN (1,2,3,4)
+	 * @param unknown $field  字段名
+	 * @param unknown $value  值, 可以是数组
+	 * @param string $op 操作符, 默认是=, 如果值是数组,那么默认为IN
+	 * @return string
+	 */
+	public static function field($field, $value, $op="") {
+		
+		if (is_array($value)) {
+			$value = implode(",", self::quote($value));
+			if (!$op) $op = "IN";
+		} else {
+			$value = self::quote($value);
+			if (!$op) $op = "=";
+		}
+		
+		$sql = "";
+		$op = strtoupper($op);
+		$op = " " . trim($op) . " ";
+		//$value = " " . $value . " ";
+		
+		switch ($op) {
+			case " > ":
+			case " >= ":
+			case " = ":
+			case " <= ":
+			case " < ":
+			case " LIKE ":
+			case " NOT LIKE ":
+				$sql = $field . $op . $value;
+			case " IN ":
+			case " NOT IN ":
+				$sql = $field . $op . " (" . $value . ")";
+				break;
+		}
+		return $sql;
+	}
+	
+	/**
 	 * 返回分页查询的sql语句
 	 * @param int $page_index  第几页
 	 * @param int $page_size   每页行数

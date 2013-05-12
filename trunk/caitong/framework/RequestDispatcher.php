@@ -60,7 +60,7 @@ class RequestDispatcher {
 			}
 			$theme     = "default";
 			$view_name = $data["view"] . ".phtml";
-			$view_page = APP_ROOT . "/theme/$theme/" . $this->appName . "/" . $this->module . "/" . $view_name;
+			$view_page = APP_ROOT . "/theme/$theme/" . $view_name;
 			$viewModel = ViewModel::fromArray($data);
 			if (file_exists($view_page)) {
 				logger::info("render page: $view_page");

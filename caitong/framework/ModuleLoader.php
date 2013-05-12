@@ -16,7 +16,7 @@ class ModuleLoader {
         public function isModuleExists($moduleName) {
 			$moduleName .=  "Action";
             $class_file  = $this->getLocation($moduleName);
-			echo $class_file . "<br />";
+			//echo $class_file . "<br />";
 			if (file_exists($class_file)) {
 				return true;
 			}

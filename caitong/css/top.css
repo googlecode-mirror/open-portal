@@ -3,6 +3,9 @@ body,ul,img{
 	padding:0px;
 	border: 0px;
 }
+* {
+	font-size: 12px;
+}
 .wrap{
 	font-size: 12px;
 	width:970px;

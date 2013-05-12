@@ -33,6 +33,11 @@ class Container {
 		return self::$app;
 	}
 	
+	/**
+	 * 返回当前Application
+	 * @throws Exception
+	 * @return Application
+	 */
 	public static function app() {
 		if (!isset(self::$app)) {
 			throw new Exception("App not start yet!");
@@ -40,6 +45,11 @@ class Container {
 		return self::$app;
 	}
 	
+	/**
+	 * 当前上下文
+	 * @throws Exception
+	 * @return Context
+	 */
 	public static function ctx() {
 		if (!isset(self::$ctx)) {
 			throw new Exception("ctx not not found!");
@@ -47,12 +57,17 @@ class Container {
 		return self::$ctx;
 	}
 	
+	/**
+	 * 返回表名
+	 * @param unknown $name
+	 * @return number
+	 */
 	public static function tableName($name) {
 		$cfg = self::app()->getConfig();
 		$tablePrefix = $cfg["table_prefix"];
-		return $tablePrefix + $cfg["tables"][$name];
+		return $tablePrefix . '_' . $cfg["tables"][$name];
 	}
-	
+	 
 }
 
 // shortcut class

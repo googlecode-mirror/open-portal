@@ -71,7 +71,7 @@
 			$this->on_error("query sql failed: ".$this->error_info().$sql, $this->errno(), $sql);
 		}
 		$datas = array();
-		while ($row = $this->fetch_array($query)) {
+		while (true == ($row = $this->fetch_array($query))) {
 			$datas[] = $row;
 		}
 		$this->free_result($query);
@@ -144,7 +144,7 @@
 	}
 	
 	// 取下一行数据
-	private function fetch_array($query, $result_type = MYSQL_ASSOC) {
+	private function fetch_array($query, $result_type = MYSQL_BOTH) {
 		return mysql_fetch_array($query, $result_type);
 	}
 	

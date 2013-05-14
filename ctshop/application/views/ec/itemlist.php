@@ -16,7 +16,7 @@
 	function make_link($viewModel, $page) {
 		//$pageIndex    = $viewModel->pageIndex;
 		//if ($pageIndex === $page) return "#";
-		return "{$viewModel->pageUrl}{$viewModel->typeId}/{$viewModel->currency}/{$viewModel->orderBy}/{$viewModel->orderDirect}/{$viewModel->pageSize}/$page";
+		return "{$viewModel->pageUrl}/{$viewModel->typeId}/{$viewModel->currency}/{$viewModel->orderBy}/{$viewModel->orderDirect}/{$viewModel->pageSize}/$page";
 	}
 	
 	?>

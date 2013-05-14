@@ -17,17 +17,16 @@ class Main extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		
-		$data['title'] = '管理员登录';
-		
 		$this->form_validation->set_rules('userName', 'userName', 'required');
 		$this->form_validation->set_rules('userPwd', 'userPwd', 'required');
 		
 		if ($this->form_validation->run() === FALSE)
 		{
-			$this->load->view("admin/login.php", $data);
+			$this->load->view("admin/login", null);
 		}
 		else
 		{
+			echo "xxxxxxxx";
 			$this->load->view('news/success');
 		}
 	}

@@ -37,12 +37,10 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+$route['admin/Main/login'] = 'admin/Main/login';
 
 $route['default_controller'] = "ec/main/index";
 $route['404_override'] = '';
-$route['(:any)'] = 'admin/Main/login';
-
-
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

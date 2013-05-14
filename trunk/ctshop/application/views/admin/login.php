@@ -2,7 +2,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type = "text/javascript" src = "<?=CTX_PATH ?>static/script/jquery.js"></script>
-<title><?=$title ?></title>
+<script type = "text/javascript" src = "<?=CTX_PATH ?>static/script/admin/login.js"></script>
+<title>管理员登录</title>
 <style type="text/css">
 <!--
 body {
@@ -18,10 +19,11 @@ body {
 	font-size: 12px;
 }
 -->
-</style></head>
+</style>
+</head>
 
 <body>
-<?php echo form_open('news/create') ?>
+<?php echo form_open('admin/Main/login', array('id' => 'login_form')) ?>
 <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td bgcolor="#e5f6cf">&nbsp;</td>
@@ -38,11 +40,11 @@ body {
             <td width="183" background="<?=CTX_PATH ?>static/images/login_07.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="21%" height="30"><div align="center"><span class="STYLE3">用户</span></div></td>
-                <td width="79%" height="30"><input type="text" name="userName"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
+                <td width="79%" height="30"><input type="text" id = "userName" name="userName"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
               </tr>
               <tr>
                 <td height="30"><div align="center"><span class="STYLE3">密码</span></div></td>
-                <td height="30"><input type="password" name="userPwd"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
+                <td height="30"><input type="password" id = "userPwd"  name="userPwd"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
               </tr>
               <tr>
                 <td height="30">&nbsp;</td>
@@ -83,6 +85,6 @@ body {
   </tr>
 </table>
 
-<map name="Map"><area shape="rect" coords="3,3,36,19" href="#"><area shape="rect" coords="40,3,78,18" href="#"></map></body>
+<map name="Map"><area shape="rect" coords="3,3,36,19" href = "#" onclick="Login.login();"><area shape="rect" coords="40,3,78,18" onclick="Login.resetVal();" href = "#"></map></body>
 </form>
 </html>

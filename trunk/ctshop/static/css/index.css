@@ -1,0 +1,139 @@
+.ct_middle{
+	width:970px;
+	margin-top:10px;
+	height:835px;
+}
+.ct_middle_type{
+	width : 250px;
+	border:1px solid #C4C5A6;
+	float:left;
+	height:820px;
+	margin-bottom:10px;
+}
+.ct_middle_right{
+	width: 700px;
+	float:right;
+}
+.ct_middle_scrollImg{
+	width: 700px;
+	height:280px;
+	margin-bottom: 10px;
+}
+.ct_middle_type_title{
+	width:245px;
+	background-image: url(../images/lm_bg.png);
+	height:33px;
+	background-repeat: repeat-x;
+	line-height: 33px;
+	padding-left:5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.ct_middle_type_list{
+	width:248px;
+}
+.ct_middle_type_flow{
+	width:250px;
+	height:30px;
+	line-height:30px;
+	border-bottom:1px dashed #C4C5A6;
+	cursor: pointer;
+}
+.ct_middle_type_flow img{
+	margin-left:5px;
+	vertical-align: middle;
+}
+.ct_middle_type_sub_flow{
+	width:250px;
+	height:30px;
+	line-height:30px;
+	border-bottom:1px dashed #C4C5A6;
+	cursor: pointer;
+}
+.ct_middle_type_sub_flow img{
+	margin-left:25px;
+}
+.ct_middle_goods_list{
+	width:700px;
+}
+.ct_middle_goods_title{
+	width:692px;
+	height:33px;
+	background-image: url(../images/lm_bg.png);
+	background-repeat: repeat-x;
+	line-height: 33px;
+	padding-left:5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.ct_goods_info{
+	width: 150px;
+	height:230px;
+	margin-top:10px;
+	margin-left:20px;
+	float: left;
+}
+.ct_goods_info ul li{
+	list-style-type: none;
+	margin-top:10px;
+	text-align: center;
+	font-weight: bold;
+}
+.ct_goods_info img{
+	border:1px solid gray;
+}
+.ct_links{
+	width : 970px;
+	height:160px;
+	border:1px solid #C4C5A6;
+}
+.ct_links_body{
+	width:970px;
+}
+.ct_links_item{
+	width:150px;
+	margin-top: 15px;
+	margin-left:65px;
+	height:150px;
+	float:left;
+}
+.ct_links_item li{
+	list-style: none;
+	height:25px;
+	line-height: 25px;
+	text-align: center;
+	font-size:12px;
+}
+.ct_copy_info{
+	background-image: url(../images/copy_bg.png);
+	background-repeat: repeat-x;
+	height:90px;
+	border-top:2px solid gray;
+	margin-top:10px;
+}
+.add_to_cart{
+	height:28px;
+	width:90px;
+	margin-left:30px;
+	font-size:13px;
+	line-height : 28px;
+	background: url(../images/btn_bg.gif) center no-repeat;
+}
+.add_to_cart a{
+	display: block;
+	color: white;
+	font-size: 12px;
+}
+.add_to_cart_info{
+	background-image:url(../images/btn_bg.gif);
+	background-repeat:no-repeat;
+	width:90px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	margin-top:20px;
+}
+.add_to_cart_info a{
+	display:block;
+	color:white;
+}

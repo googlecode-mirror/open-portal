@@ -5,7 +5,7 @@
 <title>商品列表</title>
 <link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/index.css" />
 <link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/goodsList.css" />
-<script type="text/javascript" src="<?php echo CTX_PATH ?>static/script/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<?php echo CTX_PATH ?>static/script/jquery.js"></script>
 </head>
 <body>
 	<?php 

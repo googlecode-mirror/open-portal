@@ -1,6 +1,15 @@
 <?php
 
-define("CTX_PATH", "/ctshop/");
+$doc_root = $_SERVER["DOCUMENT_ROOT"];
+$cur_dir  = str_replace('\\', '/', __DIR__) . "/";
+
+if ($doc_root === $cur_dir) {
+	$ctx_path = "/";
+} else {
+	$ctx_path = substr($cur_dir, strlen($doc_root) - 1);
+}
+//echo "$doc_root, $cur_dir, $ctx_path";
+define("CTX_PATH", $ctx_path);
 
 /*
  *---------------------------------------------------------------

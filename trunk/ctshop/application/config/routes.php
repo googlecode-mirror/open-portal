@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "ec/main/index";
 $route['404_override'] = '';
+$route['(:any)'] = 'admin/Main/login';
+
 
 
 /* End of file routes.php */

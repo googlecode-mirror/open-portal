@@ -1,5 +1,7 @@
 <?php
 
+define("CTX_PATH", "/ctshop/");
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

@@ -1,3 +1,5 @@
+
+<script type="text/javascript" src="<?php echo CTX_PATH ?>static/script/jquery-1.9.1.min.js"></script>
 <link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/top.css" />
 <div class = "ct_top">
 			<div class = "ct_top_log">

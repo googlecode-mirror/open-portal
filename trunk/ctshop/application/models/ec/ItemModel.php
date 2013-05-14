@@ -165,7 +165,7 @@ class ItemModel extends CI_Model {
 		$orderCol = "";
 		switch ($orderBy) {
 			case "price":
-				$orderCol = "price";
+				$orderCol = "RMB";
 				break;
 			case "name":
 				$orderCol = "gd_zhName";

@@ -5,6 +5,7 @@
 <title>商品列表</title>
 <link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/index.css" />
 <link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/goodsList.css" />
+<script type="text/javascript" src="<?php echo CTX_PATH ?>static/script/jquery-1.9.1.min.js"></script>
 </head>
 <body>
 	<?php 
@@ -47,14 +48,25 @@
 								<div style = "float:left;"><img src = "<?php echo CTX_PATH ?>static/images/location_hot.gif" />&nbsp;<b>人生几何</b></div>
 								<div style = "float:right;margin-right:10px;">
 									排序方式：
-									<select>
-										<option>按名称A-Z</option>
-										<option>按名称Z-A</option>
-										<option>按价格升序</option>
-										<option>按价格降序序</option>
-										<option>按型号A-Z</option>
-										<option>按型号Z-A</option>
+									<select id="ctlSortBy">
+										<option value="name/asc">按名称A-Z</option>
+										<option value="name/desc">按名称Z-A</option>
+										<option value="price/asc">按价格升序</option>
+										<option value="price/desc">按价格降序序</option>
+										<!-- <option value="model/asc">按型号A-Z</option>
+										<option value="model/desc">按型号Z-A</option> -->
 									</select>
+									
+									<script type="text/javascript">
+										// 重新排序
+										var ctlSortBy = jQuery("#ctlSortBy");
+										ctlSortBy.val("<?php echo "{$viewModel->orderBy}/{$viewModel->orderDirect}" ?>");
+										ctlSortBy.bind("change", function() {
+											var sortBy = jQuery(this).val();
+											window.location.href = <?php echo "\"{$viewModel->pageUrl}/{$viewModel->typeId}/{$viewModel->currency}/\"" ?> 
+											+ sortBy + <?php echo "\"/{$viewModel->pageSize}/{$viewModel->pageIndex}\"" ?>;
+										});
+									</script>
 									
 								</div>
 							</div>

@@ -62,7 +62,10 @@
 						</tr>
 						<tr>
 							<td>
+								<?php if (count($viewModel->items) == 0) : ?>
+								<div>没有找到符合条件的商品</div>
 								<?php 
+								else:
 								foreach($viewModel->items as $k => $item): ?>
 								<div class="ct_goods_info">
 									 <ul>
@@ -72,15 +75,15 @@
 										<li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
 									  </ul>
 								</div>
-								<?php endforeach; ?>
+								<?php endforeach; 
+							    endif;?>
 							</td>
 						  </tr>
 							<tr>
 								<td>
+								    <?php if (count($viewModel->items) > 0) :?>
 									<div class="ct_type_pageInfo">
-										<?php 
 										
-										?>
 										查询结果：共<font color="red"><?php echo $viewModel->itemCount; ?></font>条记录&nbsp;
 										共<font color="red"><?php echo $viewModel->totalPage ?></font>页&nbsp;
 										<a href="<?php echo ($pageIndex == 1) ? '#' : make_link($viewModel, 1)  ?>">首页</a>&nbsp;
@@ -88,6 +91,7 @@
 										<a href="<?php echo ($pageIndex == $totalPage) ? '#' : make_link($viewModel, $pageIndex  + 1)  ?>">下一页</a>&nbsp;
 										<a href="<?php echo ($pageIndex == $totalPage) ? '#' : make_link($viewModel, $totalPage)  ?>">最后一页</a>
 									</div>
+									<?php endif; ?>
 								</td>
 							</tr>
 					 

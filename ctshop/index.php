@@ -9,8 +9,7 @@ if ($doc_root === $cur_dir) {
 } else {
 	$ctx_path = substr($cur_dir, strlen($doc_root));
 }
-//echo "$doc_root, $cur_dir, $ctx_path";
-define("CTX_PATH", $ctx_path);
+define("CTX_PATH", "/".$ctx_path);
 
 /*
  *---------------------------------------------------------------

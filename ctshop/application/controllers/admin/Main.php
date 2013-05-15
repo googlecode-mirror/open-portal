@@ -26,8 +26,7 @@ class Main extends CI_Controller {
 		}
 		else
 		{
-			echo "xxxxxxxx";
-			$this->load->view('news/success');
+			$this->load->view('admin/index');
 		}
 	}
 }

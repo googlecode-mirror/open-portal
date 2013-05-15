@@ -7,9 +7,9 @@ $cur_dir  = str_replace('\\', '/', dirname(__FILE__)) . "/";
 if ($doc_root === $cur_dir) {
 	$ctx_path = "/";
 } else {
-	$ctx_path = substr($cur_dir, strlen($doc_root));
+	$ctx_path = "/" . substr($cur_dir, strlen($doc_root));
 }
-define("CTX_PATH", "/".$ctx_path);
+define("CTX_PATH", $ctx_path);
 
 /*
  *---------------------------------------------------------------

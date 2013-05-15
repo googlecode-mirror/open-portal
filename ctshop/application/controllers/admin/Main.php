@@ -11,6 +11,7 @@ class Main extends CI_Controller {
 	 */
 	function __construct() {
 		parent::__construct();
+		$this->load->model("admin/UserModel");
 	}
 	
 	function login() {
@@ -26,7 +27,16 @@ class Main extends CI_Controller {
 		}
 		else
 		{
-			$this->load->view('admin/index');
+			$this->load->helper('url');
+			$userName = $this->input->post('userName');
+			$userPwd = $this->input->post('userPwd');
+			$loginRes = $this->UserModel->login($userName, $userPwd);
+			
+			if($loginRes){
+				$this->load->view('admin/index');
+			}else{
+				$this->load->view("admin/login", null);
+			}
 		}
 	}
 }

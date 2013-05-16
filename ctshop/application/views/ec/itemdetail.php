@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<link type="text/css" rel="stylesheet" href="css/index.css" />
-<link type="text/css" rel="stylesheet" href="css/goodInfo.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/index.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/goodInfo.css" />
 </head>
 <body>
 	<div class="wrap">
@@ -12,7 +12,7 @@
 			<tr>
 				<td>
 					<?php
-						require_once("top.php");
+						require(APPPATH . "views/ec/top.php");
 					?>
 					<div class="ct_location">
 						当前位置：&nbsp;<a href="index.php">首页</a>&nbsp;&gt;&gt;&nbsp;<a href="goodsList.php">人生几何</a>&nbsp;&gt;&gt;&nbsp;HTC Touch HD
@@ -21,8 +21,9 @@
 					<div class="ct_middle">
 					<div>
 					<?php
-						require_once("typeList.php");
+						require(APPPATH . "views/ec/typelist.php");
 					?>
+					<?php $item = $viewModel->item; ?>
 					<div class="ct_middle_right">
 						<div class="ct_good_img">
 							<img src="images/goodInfo.gif"  width="350" height="350" />
@@ -31,7 +32,7 @@
 							<table border="0" cellpadding="10" cellspacing="0">
 								<tr>
 									<td>
-										<font size="+2">HTC Touch HD</font>
+										<font size="+2"><?php echo $viewModel->item['zhName'] ?></font>
 									</td>
 								</tr>
 								<tr>
@@ -41,17 +42,17 @@
 								</tr>
 								<tr>
 									<td>
-										型号：Product 3
+										型号：<?php echo $viewModel->item["model"] ?>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										市场价：<del>100 RMB</del></font>
+										市场价：<del><?php echo $viewModel->item["RMB"] ?> RMB</del></font>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										价格：<font color="#FF0000" size="+1">100 RMB</font>
+										价格：<font color="#FF0000" size="+1"><?php echo $viewModel->item["RMB"] ?> RMB</font>
 									</td>
 								</tr>
 								<tr>
@@ -75,7 +76,7 @@
 								</div>
 							</div>
 							<div class="ct_good_detail_body">
-								
+								<?php echo $viewModel->item["remark"]; ?>
 							</div>
 						</div>
 					</div>
@@ -84,7 +85,7 @@
 			<tr>
 				<td>
 					<?php
-						require_once("copy.php");
+						require(APPPATH . "views/ec/copy.php");
 					?>
 				</td>	
 			</tr>

@@ -81,7 +81,7 @@
 								foreach($viewModel->items as $k => $item): ?>
 								<div class="ct_goods_info">
 									 <ul>
-										<li><a href = "goodInfo.php?goodId=<?php echo $item['gd_id'] ?>"><img src="<?php echo CTX_PATH ?>static/images/goods.gif" width="125" height="100" /></a></li>
+										<li><a href = "<?php echo CTX_PATH ?>index.php/ec/item/detail/<?php echo $item['gd_id'] ?>"><img src="<?php echo CTX_PATH ?>static/images/goods.gif" width="125" height="100" /></a></li>
 										<li><font color = "#38B0E3"><?php echo $item["gd_zhName"]?></font></li>
 										<li><?php echo $currency . " " . $item[$currency] ?> </li>
 										<li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>

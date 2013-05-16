@@ -58,8 +58,15 @@
 								<tr>
 									<td>
 										<div class="num_and_cart">
-											购买数量：<input type="text" size="5" value="5">
-											<div class = "add_to_cart_info"><a href = "shopCart.php">Add to Cart</a></div>
+											购买数量：<input id="ctlQty" type="text" size="5" value="1">
+											<div class = "add_to_cart_info"><a href="#" onclick="addToCart()">Add to Cart</a></div>
+											<script>
+												function addToCart() {
+													var qty = document.getElementById("ctlQty").value;
+													var url = '<?php echo CTX_PATH ?>index.php/ec/cart/addItem/<?php echo $viewModel->item["itemId"] ?>/' + qty;
+													window.location.href = url 
+												}
+											</script>
 										</div>
 									</td>
 								</tr>

@@ -83,9 +83,11 @@
 
 					}
 
-					var items = [{id:1, name:"iphone 4s", image:"goods.gif", qty:2, price: 100},
+					/*var items = [{id:1, name:"iphone 4s", image:"goods.gif", qty:2, price: 100},
 					             {id:3, name:"iphone 5", image:"goods.gif", qty:1, price: 600},
 					             {id:4, name:"iphone 5s", image:"goods.gif", qty:1, price: 900}];
+		             */
+		             var items = <?php echo json_encode($cartLines)?>;
 					var lines = [];
 					$.each(items, function() {lines.push(new CartLine(this));});
 

@@ -245,8 +245,8 @@ SQL;
 		$tableGoodPrice = $this->db->dbprefix("goodPrice");
 		
 		$sql = <<<SQL
-SELECT t.gd_id, t.gd_zhName, t.gd_enName, t.gd_model, t.gd_littleImg, t.gd_addDate, t.gd_remark
-		,t2.gt_id, t2.gt_name
+SELECT t.gd_id itemId, t.gd_zhName zhName, t.gd_enName enName, t.gd_model model, t.gd_littleImg littleImg, t.gd_addDate addDate, t.gd_remark remark
+		,t2.gt_id typeId, t2.gt_name typeName
 		,t3.gp_rmb RMB, t3.gp_euro EURO, t3.gp_dollar USD, t3.gp_pound UKP
 		FROM $tableGoodInfo t
 		INNER JOIN $tableGoodType t2 ON t.gt_id = t2.gt_id
@@ -254,7 +254,7 @@ SELECT t.gd_id, t.gd_zhName, t.gd_enName, t.gd_model, t.gd_littleImg, t.gd_addDa
 		WHERE 1
 SQL;
 		
-		$sql .= " AND " . $this->field("gd_id", $itemId);
+		$sql .= " AND " . $this->field("t.gd_id", $itemId);
 		
 		return $this->query_one($sql);
 	}
@@ -283,7 +283,7 @@ SQL;
 		}
 	}
 	
-	private function field($field, $value, $op="") {
+	private function field($field, $value, $op="=") {
 	
 		if (is_array($value)) {
 			$value = implode(",", $this->db->escape_str($value));
@@ -307,6 +307,7 @@ SQL;
 			case " LIKE ":
 			case " NOT LIKE ":
 				$sql = $field . $op . $value;
+				break;
 			case " IN ":
 			case " NOT IN ":
 				$sql = $field . $op . " (" . $value . ")";

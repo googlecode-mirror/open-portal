@@ -7,6 +7,8 @@
  */
 class Item extends CI_Controller {
 	
+	private $typeTree;
+	
 	/**
 	 * 构造函数,加载模块
 	 */
@@ -14,6 +16,22 @@ class Item extends CI_Controller {
 		parent::__construct();
 		
 		$this->load->model("ec/ItemModel");
+		// load the good types
+		$this->typeTree = $this->ItemModel->getItemTypeTree();
+	}
+	
+	function detail($itemId) {
+		$item = $this->ItemModel->getItemDetail($itemId);
+		
+		$this->load->library("PropertyObject", NULL, 'po');
+		
+		$this->po->putArray(array(
+				"typeTree" => $this->typeTree,
+				"pageUrl" => $this->_pageUrl("detail"),
+				"item" => $item
+				));
+		//var_dump($item);
+		$this->load->view("ec/itemdetail", array("viewModel" => $this->po));
 	}
 	
 	/**
@@ -22,10 +40,6 @@ class Item extends CI_Controller {
 	function showlist($typeId = 0, $currency = "RMB", $orderBy = "name", $orderDirect = "asc"
 			, $page_size = 12, $page_index = 1) {
 		
-		$pageUrl = substr($_SERVER["REQUEST_URI"], 0 , strpos($_SERVER["REQUEST_URI"],"showlist" ) + strlen("showlist") + 1);
-		// load the good types
-		$typeTree = $this->ItemModel->getItemTypeTree();
-		
 		$pageInfo    = array("page_index" => $page_index, "page_size" => $page_size);
 		$param = array(
 				"typeId"      => $typeId,
@@ -33,6 +47,7 @@ class Item extends CI_Controller {
 				"orderDirect" => $orderDirect,
 				"pageInfo"    => $pageInfo
 		);
+		
 		// load the items
 		$items = $this->ItemModel->getItemList($param);
 		
@@ -47,12 +62,12 @@ class Item extends CI_Controller {
 				"pageIndex" => $page_index,
 				"pageSize"  => $page_size,
 				"items"    => $items["data"],
-				"typeTree" => $typeTree,
+				"typeTree" => $this->typeTree,
 				"currency" => $currency,
 				"typeId"   => $typeId,
 				"orderBy"  => $orderBy,
 				"orderDirect" => $orderDirect,
-				"pageUrl" => $pageUrl
+				"pageUrl" => $this->_pageUrl("showlist")
 		));
 		
 		//$this->dump();
@@ -61,6 +76,15 @@ class Item extends CI_Controller {
 		//var_dump($items);
 	}
 	
+	/**
+	 * 返回当前页面地址, 除去参数外的地址
+	 * @param unknown $method
+	 * @return string
+	 */
+	private function _pageUrl($method) {
+		
+		return substr($_SERVER["REQUEST_URI"], 0 , strpos($_SERVER["REQUEST_URI"], $method ) + strlen($method) + 1);
+	}
 	
 	/**
 	 * 测试页面

@@ -6,8 +6,36 @@
 <link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/login.css" />
 <script type = "text/javascript" src = "<?=CTX_PATH ?>static/script/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
-	function checkUserName() {
+    var user_is_exist = false;//全局变量,用户是否存在 
+
+	function checkUserExist() {
 		//Ajax请求，检查用户名是否被注册了
+		var userName = jQuery("#userName").val();
+		    
+	    //验证1,必需有 
+	    if (!userName || jQuery.trim(userName) == "") {
+	    	return;
+	    }
+		//alert(userName);
+	    //验证2,在数据库中尚未注册过的 
+	    jQuery.ajax({
+		    type: "post",
+		    url: "../regist/checkUserExist",
+		    data: {"userName":userName},
+		    success: function(msg) {
+		        if (msg == '1') {
+		        	user_is_exist = true;
+			        jQuery("#userName" + "Info").text("用户名已经被占用!");
+					jQuery("#userName").focus();
+		        } else  {
+		        	user_is_exist = false;
+		        	jQuery("#userName" + "Info").text("");
+		        }
+
+		    }//, 
+	    //async: false //同步也没用 
+	    });
+				
 	}
 	function validForm() {
 		jQuery(".errInfo").text(""); //清空错误信息
@@ -67,7 +95,7 @@
 			jQuery("#telNo").focus();
 			errorFlag = true;
 		}
-		if (errorFlag == true) {
+		if (errorFlag == true || user_is_exist) {
 			return false;
 		}
 		return true;
@@ -95,7 +123,7 @@
 									<div align="right">用户名:</div>
 								</td>
 								<td width="75%">
-									<input type="text" name="userName" id="userName" cssClass="input2" size="15" maxlength="20" /><font color="red">*&nbsp;&nbsp;<span class="errInfo" id="userNameInfo"></span></font>
+									<input type="text" name="userName" id="userName" cssClass="input2" size="15" maxlength="20" onchange="checkUserExist()"/><font color="red">*&nbsp;&nbsp;<span class="errInfo" id="userNameInfo"></span></font>
 								</td>
 							</tr>
 							<tr>

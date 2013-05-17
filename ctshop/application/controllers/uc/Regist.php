@@ -12,24 +12,50 @@ class Regist extends CI_Controller {
 	 */
 	function __construct() {
 		parent::__construct();
+		$this->load->model("uc/UserModel");
 	}
 	
 	function index() {
 		$this->load->view("uc/regist");
 	}
 	
-	function regist() {
-		$userName = $this->input->post('userName');
-		$userPwd = $this->input->post('userPwd');
-		$email = $this->input->post('email');
-		$country = $this->input->post('country');
-		$telNo = $this->input->post('telNo');
-
+	function checkUserExist() {
+		$param = array(
+				"userName" => $this->input->post('userName')
+		);
 		
-		if ($userName == '111') {
-			echo "$userName '==' $userPwd '==' $email '==' $country '==' $telNo";
+		$isExist = $this->UserModel->checkUserExist($param);
+		if ($isExist) {
+			echo '1';
 		} else {
-			echo 'Regis Faild!';
+			echo '0';
+		}
+	}
+	
+	function regist() {
+		$param = array(
+				"userName"      => $this->input->post('userName'),
+				"userPwd"     => $this->input->post('userPwd'),
+				"email" => $this->input->post('email'),
+				"country"    => $this->input->post('country'),
+				"telNo"    => $this->input->post('telNo')
+		);
+		//$userName = $this->input->post('userName');
+		//$userPwd = $this->input->post('userPwd');
+		//$email = $this->input->post('email');
+		//$country = $this->input->post('country');
+		//$telNo = $this->input->post('telNo');
+		
+		$isExist = $this->UserModel->checkUserExist($param);
+		if ($isExist) {
+			echo 'user is exist! can not regist!';
+		} else {
+			$result = $this->UserModel->registUserInfo($param);
+			if ($result > 0) {
+				echo 'regist success!';
+			} else {
+				echo 'regist faild!';
+			}
 		}
 		//$this->load->view("uc/regist");
 	}

@@ -141,7 +141,11 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-          <li><a href="<?=CTX_PATH ?>index.php/admin/Order/orderList">订单列表</a></li>
+          <li><a href="<?=CTX_PATH ?>index.php/admin/Order/orderList/0">待确认订单</a></li>
+          <li><a href="<?=CTX_PATH ?>index.php/admin/Order/orderList/1">备货中订单</a></li>
+          <li><a href="<?=CTX_PATH ?>index.php/admin/Order/orderList/2">发货中订单</a></li>
+          <li><a href="<?=CTX_PATH ?>index.php/admin/Order/orderList/3">已收货订单</a></li>
+          <li><a href="<?=CTX_PATH ?>index.php/admin/Order/orderList/4">作废订单</a></li>
         </ul>
       </div>
       <h1 class="type"><a href="javascript:void(0)">商品管理</a></h1>

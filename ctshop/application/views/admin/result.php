@@ -7,7 +7,14 @@
 <script type = "text/javascript">
 	window.onload = function(){
 		setTimeout(function(){
-			document.location = '<?=CTX_PATH ?>index.php/<?=$to_url ?>';
+			var params = [];
+			params.push('width=',screen.availWidth);
+			params.push(', height=',screen.availHeight);
+			params.push(', top=0, left=0, status=1,resizable=1');
+			var newwin = window.open('<?=CTX_PATH ?>index.php/<?=$to_url ?>', "", params.join(","));
+			if (window.focus) {newwin.focus()}
+			window.open('', '_parent', '');
+			window.close();
 		}, 1000);
 	};
 </script>

@@ -47,4 +47,29 @@
 <?php 
 	}
 ?>
+<select id = "page_size_list" style = "margin-top:5px;" onchange = "Order.changePage(this);">
+	<?php 
+		if($pageSize == 5){
+	?>
+	<option value="5" selected="selected">5</option>
+	<?php }else{?>
+	<option value="5">5</option>
+	<?php }?>
+	
+	<?php 
+		if($pageSize == 10){
+	?>
+	<option value="10" selected="selected">10</option>
+	<?php }else{?>
+	<option value="10">10</option>
+	<?php }?>
+	
+	<?php 
+		if($pageSize == 15){
+	?>
+	<option value="15" selected="selected">15</option>
+	<?php }else{?>
+	<option value="15">15</option>
+	<?php }?>
+</select>
 </div>

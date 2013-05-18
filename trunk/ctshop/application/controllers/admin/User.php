@@ -35,12 +35,12 @@ class User extends CI_Controller {
 				$_SESSION['adminUser'] = $userName;
 				$data['msg'] = "登录成功，正在跳转到后台管理页面";
 				$data['to_url'] = 'admin/index';
-				$this->load->view('admin/result', $data);
+				$data['openType'] = 1;
 			}else{
 				$data['msg'] = "用户名或密码错误，返回登录页面";
 				$data['to_url'] = 'admin/login';
-				$this->load->view("admin/result", $data);
 			}
+			$this->load->view('admin/result', $data);
 		}
 	}
 	

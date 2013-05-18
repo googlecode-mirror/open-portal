@@ -25,7 +25,9 @@ fx.Base.prototype = {
 			this.now = this.to;
 			clearInterval (this.timer);
 			this.timer = null;
-			if (this.options.onComplete) setTimeout(this.options.onComplete.bind(this), 10);
+			if (this.options.onComplete){
+				setTimeout(this.options.onComplete.bind(this), 10);
+			}
 		}
 		else {
 			var Tpos = (time - this.startTime) / (this.options.duration);

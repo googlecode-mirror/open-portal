@@ -1,11 +1,9 @@
 <?php
 
 /** 
- * 
- * 后台管理首页
- * path: http://localhost/ctshop/index.php/admin/Main/login/
+ * 用户管理控制器
  */
-class Main extends CI_Controller {
+class User extends CI_Controller {
 	
 	/**
 	 */
@@ -33,11 +31,31 @@ class Main extends CI_Controller {
 			$loginRes = $this->UserModel->login($userName, $userPwd);
 			
 			if($loginRes){
-				$this->load->view('admin/index');
+				session_start();
+				$_SESSION['adminUser'] = $userName;
+				$data['msg'] = "登录成功，正在跳转到后台管理页面";
+				$data['to_url'] = 'admin/index';
+				$this->load->view('admin/result', $data);
 			}else{
-				$this->load->view("admin/login", null);
+				$data['msg'] = "用户名或密码错误，返回登录页面";
+				$data['to_url'] = 'admin/login';
+				$this->load->view("admin/result", $data);
 			}
 		}
+	}
+	
+	/**
+	 * 首页显示订单列表
+	 */
+	public function index(){
+		if(!empty($_SESSION['adminUser'])){
+			$this->load->view("admin/login");
+			return;
+		}
+		
+		$data['page'] = "welcome";
+		$data['titleName'] = "欢迎登录";
+		$this->load->view('admin/index', $data);
 	}
 }
 

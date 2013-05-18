@@ -54,7 +54,7 @@ if ( ! function_exists('form_open'))
 		{
 			$action = $CI->config->site_url($action);
 		}
-
+		
 		// If no action is provided then set to the current url
 		$action OR $action = $CI->config->site_url($CI->uri->uri_string());
 

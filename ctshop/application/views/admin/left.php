@@ -141,15 +141,7 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-          <li><a href="http://www.865171.cn" target="main">基本设置</a></li>
-          <li><a href="http://www.865171.cn" target="main">邮件设置</a></li>
-          <li><a href="http://www.865171.cn" target="main">广告设置</a></li>
-          <li><a href="http://www.865171.cn" target="main">114增加</a></li>
-          <li><a href="http://www.865171.cn" target="main">114管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">联系方式</a></li>
-          <li><a href="http://www.865171.cn" target="main">汇款方式</a></li>
-          <li><a href="http://www.865171.cn" target="main">增加链接</a></li>
-          <li><a href="http://www.865171.cn" target="main">管理链接</a></li>
+          <li><a href="<?=CTX_PATH ?>index.php/admin/Order/orderList">订单列表</a></li>
         </ul>
       </div>
       <h1 class="type"><a href="javascript:void(0)">商品管理</a></h1>

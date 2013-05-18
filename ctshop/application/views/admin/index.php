@@ -3,6 +3,7 @@
 <head>
 <title>管理中心</title>
 <meta http-equiv=Content-Type content=text/html;charset=UTF-8 />
+<link type="text/css" rel="stylesheet" href="<?=CTX_PATH ?>static/css/manage_pub.css" />
 <script type = "text/javascript" src = "<?=CTX_PATH ?>static/script/jquery.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){

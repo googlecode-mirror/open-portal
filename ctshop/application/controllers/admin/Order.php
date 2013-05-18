@@ -23,9 +23,19 @@ class Order extends CI_Controller {
 		$this->load->helper('form');
 		
 		$orderid_input = $this->input->post('orderId');
+		$titleId_input = $this->input->post('titleId');
+		$pageSize_input = $this->input->post('pageSize');
 		
 		if(!empty($orderid_input)){
-			$orderId = $orderid_input; 
+			$orderId = $orderid_input;
+		}
+		
+		if(!empty($titleId_input)){
+			$titleId = $titleId_input;
+		}
+		
+		if(!empty($pageSize_input)){
+			$pageSize = $pageSize_input;
 		}
 		
 		$data['page'] = "orderList";
@@ -34,6 +44,37 @@ class Order extends CI_Controller {
 		$data['orderId'] = $orderId;
 		$data['order'] = $this->OrderModel->getOrderList($currPage, $pageSize, $titleId, $orderId);
 		$this->load->view('admin/index', $data);
+	}
+	
+	/**
+	 * 修改订单状态
+	 * 
+	 * @param unknown_type $status 要修改的目标状态
+	 */
+	public function updOder($orderId, $srcStatus = 0, $resStatus = 0){
+		$res = FALSE;
+		
+		if(empty($orderId) || empty($orderId)){
+			$res = FALSE;
+		}else{
+			$resCount = $this->OrderModel->updStatus($orderId, $resStatus);
+			
+			if($resCount > 0){
+				$res = TRUE;
+			}else{
+				$res = FALSE;
+			}
+		}
+		
+		if($res){
+			$data['msg'] = "订单状态修改成功,正在返回订单列表";
+			$data['to_url'] = 'admin/Order/orderList/'.$resStatus;
+		}else{
+			$data['msg'] = "修改订单状态失败，正在返回订单列表";
+			$data['to_url'] = 'admin/Order/orderList/'.$srcStatus;
+		}
+		
+		$this->load->view('admin/result', $data);
 	}
 	
 	/**

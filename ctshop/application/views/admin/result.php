@@ -5,16 +5,21 @@
 <title>彩通</title>
 <link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/index.css" />
 <script type = "text/javascript">
+	var openType = "<?=empty($openType) ? 0 : 1 ?>";
 	window.onload = function(){
 		setTimeout(function(){
-			var params = [];
-			params.push('width=',screen.availWidth);
-			params.push(', height=',screen.availHeight);
-			params.push(', top=0, left=0, status=1,resizable=1');
-			var newwin = window.open('<?=CTX_PATH ?>index.php/<?=$to_url ?>', "", params.join(","));
-			if (window.focus) {newwin.focus()}
-			window.open('', '_parent', '');
-			window.close();
+			if(openType == 1){
+				var params = [];
+				params.push('width=',screen.availWidth);
+				params.push(', height=',screen.availHeight);
+				params.push(', top=0, left=0, status=1,resizable=1');
+				var newwin = window.open('<?=CTX_PATH ?>index.php/<?=$to_url ?>', "", params.join(","));
+				if (window.focus) {newwin.focus()}
+				window.open('', '_parent', '');
+				window.close();
+			}else{
+				document.location = "<?=CTX_PATH ?>index.php/<?=$to_url ?>";
+			}
 		}, 1000);
 	};
 </script>

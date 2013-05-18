@@ -9,7 +9,7 @@ var Order = {
 	valiQuery : function(){
 		var oderId = jQuery("#orderId").val();
 		
-		if(!/^\d+$/.test(oderId)){
+		if(oderId != "" && !/^\d+$/.test(oderId)){
 			alert("请输入正确的订单号!");
 			return false;
 		}
@@ -17,12 +17,28 @@ var Order = {
 		return true;
 	}, 
 	
+	/** 修改每页显示条数 */
+	changePage : function(e){
+		var pageSize = jQuery(e).val();
+		jQuery("#page_size").val(pageSize);
+		this.sumbitQuery();
+	},
+	
 	/**
 	 * 提交查询
 	 */
 	sumbitQuery : function(){
 		if(this.valiQuery()){
 			jQuery("#order_query").submit();
+		}
+	},
+	
+	/**
+	 * 修改订单状态
+	 */
+	updOrderStatus : function(url) {
+		if(confirm("您确定要修改订单状态为" + status + "吗")){
+			document.location = url;
 		}
 	}
 }

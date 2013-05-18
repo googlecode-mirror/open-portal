@@ -20,7 +20,7 @@ class OrderModel extends CI_Model {
 		$other_condition = " where or_status ='".$titleId."' ";
 		
 		if(!empty($orderId)){
-			$other_condition .= " and or_id = '".$orderId."' ";
+			$other_condition .= " and or_id like '%".$orderId."%' ";
 		}
 		
 		//获得总数据量
@@ -46,6 +46,16 @@ class OrderModel extends CI_Model {
 		$res['currPage'] = $currPage;
 		$res['pageSize'] = $pageSize;
 		return $res;
+	}
+	
+	/**
+	 * 修改订单状态
+	 * @param unknown_type $status 要修改的目标状态
+	 */
+	public function updStatus($orderId = "", $status = 0){
+		$upd_sql = "update " . self::ORDER_TABLE . " set or_status = ? where or_id = ?";
+		$this->db->query($upd_sql, array($status, $orderId));
+		return $this->db->affected_rows();
 	}
 }
 ?>

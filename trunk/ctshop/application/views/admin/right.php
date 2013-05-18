@@ -20,7 +20,7 @@ body {
 				width="100%" height="31" border="0" cellpadding="0" cellspacing="0"
 				class="left_topbg" id="table2">
 				<tr>
-					<td height="31"><div class="titlebt">欢迎界面</div></td>
+					<td height="31"><div class="titlebt"><?=$titleName ?></div></td>
 				</tr>
 			</table></td>
 		<td width="16" valign="top"
@@ -32,7 +32,7 @@ body {
 		<td valign="middle"
 			background="<?=CTX_PATH ?>static/images/mail_leftbg.gif">&nbsp;</td>
 		<td valign="top" bgcolor="#F7F8F9" id = "right_body">
-		
+			<?php require_once APPPATH.'views/admin/manage/'.$page.'.php'?>
 		</td>
 		<td background="<?=CTX_PATH ?>static/images/mail_rightbg.gif">&nbsp;</td>
 	</tr>

@@ -23,7 +23,7 @@ body {
 </head>
 
 <body>
-<?php echo form_open('admin/Main/login', array('id' => 'login_form')) ?>
+<?php echo form_open('admin/User/login', array('id' => 'login_form')) ?>
 <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td bgcolor="#e5f6cf">&nbsp;</td>

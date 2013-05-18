@@ -1,0 +1,17 @@
+.manage_tb{
+	border : 1px solid #DADEE9;
+	border-collapse : collapse;
+	width : 100%;
+	margin:0px;
+	padding:0px;
+}
+.manage_tb thead th{
+	background-image: url(../images/titlebg.png);
+	background-repeat: repeat-x;
+	height : 30px;
+}
+.manage_tb tbody td{
+	border : 1px solid #DADEE9;
+	text-align: center;
+	height : 25px;
+}

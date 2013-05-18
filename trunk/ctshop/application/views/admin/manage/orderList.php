@@ -47,6 +47,9 @@
 			case 3:
 				$opra['text'] = "作废";
 				$opra['status'] = 4;
+			case 4:  //没意义，为了防止报错
+				$opra['text'] = "作废";
+				$opra['status'] = 4;
 		}
 		return $opra;
 	}
@@ -98,7 +101,7 @@
 			<?php 
 				if($or['or_status'] == 3){
 			?>
-			<td>[<a href = "">查看详细</a>]&nbsp;&nbsp;[<a href = "Order.updOrderStatus('', '<?=getOrderOpra($or['or_status']) ?>');">作废</a>]</td>
+			<td>[<a href = "">查看详细</a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id']."/".$or['or_status']."/4" ?>', '作废');">作废</a>]</td>
 			<?php 
 				}else if($or['or_status'] == 4){
 			?>
@@ -106,7 +109,7 @@
 			<?php 
 				}else{
 			?>
-			<td>[<a href = "">查看详细</a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id'].$or['or_status']."/".$res_status['status'] ?>', '<?=$res_status['text']; ?>');"><?=$res_status['text']; ?></a>]&nbsp;&nbsp;[<a href = "">作废</a>]</td>
+			<td>[<a href = "">查看详细</a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id']."/".$or['or_status']."/".$res_status['status'] ?>', '<?=$res_status['text']; ?>');"><?=$res_status['text']; ?></a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id']."/".$or['or_status']."/4" ?>', '作废');">作废</a>]</td>
 			<?php 
 				}
 			?>

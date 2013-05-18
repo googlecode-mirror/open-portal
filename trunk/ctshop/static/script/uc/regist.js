@@ -115,10 +115,10 @@ function submitForm() {
 			    url: registUrl,
 			    //url: "uc/regist/regist",
 			    data: {"userName":userName, 
-				    	"userName":userPwd,
-				    	"userName":email,
-				    	"userName":country,
-				    	"userName":telNo
+				    	"userPwd":userPwd,
+				    	"email":email,
+				    	"country":country,
+				    	"telNo":telNo
 			    	},
 			    success: function(msg) {
 			    	alert(msg);

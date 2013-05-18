@@ -36,7 +36,7 @@ class OrderModel extends CI_Model {
 		//查询数据	
 		$order_sql = "select or_id, or_sumprice, or_realname, or_date,".
 		 	"or_status from ".self::ORDER_TABLE . $other_condition .
-		 	" order by or_status asc ".
+		 	" order by or_id desc ".
 		 	" limit ".$start.",".$pageSize;
 		
 		$data = $this->db->query($order_sql);
@@ -55,6 +55,7 @@ class OrderModel extends CI_Model {
 	public function updStatus($orderId = "", $status = 0){
 		$upd_sql = "update " . self::ORDER_TABLE . " set or_status = ? where or_id = ?";
 		$this->db->query($upd_sql, array($status, $orderId));
+		echo $this->db->affected_rows();
 		return $this->db->affected_rows();
 	}
 }

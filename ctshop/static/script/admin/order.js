@@ -36,7 +36,7 @@ var Order = {
 	/**
 	 * 修改订单状态
 	 */
-	updOrderStatus : function(url) {
+	updOrderStatus : function(url, status) {
 		if(confirm("您确定要修改订单状态为" + status + "吗")){
 			document.location = url;
 		}

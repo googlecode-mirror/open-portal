@@ -5,25 +5,10 @@
 <title>登录</title>
 <link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/login.css" />
 <script type = "text/javascript" src = "<?=CTX_PATH ?>static/script/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-	function submitForm() {
-		var userName = jQuery("#userName").val();
-		var userPwd = jQuery("#userPwd").val();
-
-		if (!userName || jQuery.trim(userName) == "") {
-			alert("用户名不能为空！");
-			jQuery("#userName").focus();
-		} else if (!userPwd || jQuery.trim(userPwd) == "") {
-			alert("密码不能为空！");
-			jQuery("#userPwd").focus();
-		} else {
-			jQuery("#loginForm").submit();
-		}
-	}
-</script>
+<script type = "text/javascript" src = "<?=CTX_PATH ?>static/script/uc/login.js"></script>
 </head>
 <body>
-	<form id="loginForm" action="login" method="post">
+	<form id="loginForm" action="<?php echo site_url('uc/login/userLogin')?>" method="post">
 		<table width="400" border="0" align="center" cellpadding="10"
 			cellspacing="0" class="table1">
 			<tr>

@@ -1,49 +1,38 @@
 <?php
-
 /** 
  * 
- * 用户中心首页
- * path: http://localhost/ctshop/index.php/uc/main/index/world
+ * 用户登录
  * 
  */
 class Login extends CI_Controller {
 	
 	/**
+	 * 初始化加载UserModel
 	 */
 	function __construct() {
 		parent::__construct();
 		$this->load->model("uc/UserModel");
 	}
-	
+	/**
+	 * 跳转到用户登录界面
+	 */
 	function index() {
 		$this->load->view("uc/login");
 	}
 	
-	function login() {
-		//$userName = $this->input->post('userName');
-		//$userPwd = $this->input->post('userPwd');
-
+	/**
+	 * 用户登录操作
+	 */
+	function userLogin() {
 		$param = array(
 				"userName"      => $this->input->post('userName'),
 				"userPwd"     => $this->input->post('userPwd')
 		);
 		
 		$result = $this->UserModel->login($param);
-		if ($result == NULL) {
-			echo 'regist error!';
-		} else {
-			//$result->u_name;//放入session
-			$result->u_lock;
-			$result->u_del;
-			if ($result->u_lock == 1) {
-				echo 'user locked!';
-			} else if ($result->u_del == 1) {
-				echo 'user deleted!';
-			} else {
-				echo 'login success!';
-			}
-		}
-		//$this->load->view("uc/login");
+		$this->session->set_userdata("user", $result);//放入session
+		//$this->load->view(CTX_PATH."index.php/uc/Main");//跳转到首页
+		redirect("uc/Main/Index");
 	}
 }
 

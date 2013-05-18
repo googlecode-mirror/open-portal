@@ -14,11 +14,8 @@ class Main extends CI_Controller {
 		parent::__construct();
 	}
 	
-	function index($name = "world") {
-		// 加载model类
-		//  $this->load->model('admin/Main_model');
-		$data["name"] = $name;
-		$this->load->view("uc/main/index", $data);
+	function index() {
+		$this->load->view("uc/main/index");
 	}
 }
 

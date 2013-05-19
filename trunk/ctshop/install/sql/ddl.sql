@@ -90,11 +90,12 @@ alter table tbl_order comment '������Ϣ��';
 create table tbl_orderdetail
 (
    od_id                int not null,
-   or_id                varchar(20),
-   od_goodName          varchar(100),
-   od_price             float(8,4),
-   od_count             int,
-   od_sumprice          float(8,4),
+   or_id                varchar(20) not null,
+   gd_id                varchar(20) not null,
+   od_goodName          varchar(100) not null,
+   od_price             float(8,4) not null,
+   od_count             int not null,
+   od_sumprice          float(8,4) not null,
    primary key (od_id)
 );
 
@@ -130,6 +131,9 @@ alter table tbl_order add constraint FK_ORDER_USER foreign key (u_id)
 
 alter table tbl_orderdetail add constraint FK_ORDER_DETAIL foreign key (or_id)
       references tbl_order (or_id) on delete restrict on update restrict;
+      
+alter table tbl_orderdetail add constraint FK_ORDER_GOODINFO foreign key (gd_id)
+      references tbl_goodinfo (gd_id) on delete restrict on update restrict;
       
 
 -- 订单表加上 货币, 真实名称,email字段

@@ -112,9 +112,9 @@ create table tbl_user
    u_email              varchar(150),
    u_country            varchar(150),
    u_telephone          varchar(20),
-   u_type               bit,
-   u_lock               bit,
-   u_del                bit,
+   u_type               smallint,
+   u_lock               smallint,
+   u_del                smallint,
    primary key (u_id)
 );
 

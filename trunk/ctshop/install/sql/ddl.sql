@@ -92,6 +92,7 @@ create table tbl_orderdetail
    od_id                int not null,
    or_id                varchar(20) not null,
    gd_id                varchar(20) not null,
+   gd_littleImg         varchar(150) not null,
    od_goodName          varchar(100) not null,
    od_price             float(8,4) not null,
    od_count             int not null,

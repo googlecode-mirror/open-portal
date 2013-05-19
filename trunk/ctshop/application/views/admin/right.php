@@ -9,7 +9,7 @@ body {
 }
 -->
 </style>
-<table width="810" border="0" cellpadding="0" cellspacing="0" id = "right_content">
+<table border="0" cellpadding="0" cellspacing="0" id = "right_content">
 	<tr>
 		<td width="17" valign="top"
 			background="<?=CTX_PATH ?>static/images/mail_leftbg.gif"><img

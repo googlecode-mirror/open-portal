@@ -78,6 +78,36 @@ class Order extends CI_Controller {
 	}
 	
 	/**
+	 * 根据订单编号获得订单详情
+	 * @param unknown_type $orderId
+	 */
+	public function orderInfo($orderId){
+		$res = FALSE;
+		
+		if(empty($orderId)){
+			$res = FALSE;	
+		}else{
+			$data['order'] = $this->OrderModel->getOrderById($orderId);
+			
+			if(!isset($data['order'])){
+				$res = FALSE;
+			}else{
+				$res = TRUE;
+			}
+		}
+		
+		if($res){
+			$data['page'] = "orderDetail";
+			$data['titleName'] = "订单详情";
+			$this->load->view('admin/index', $data);
+		}else{
+			$data['msg'] = "获取订单查询失败，正在返回...";
+			$data['to_url'] = 'admin/index';
+			$this->load->view('admin/result', $data);
+		}
+	}
+	
+	/**
 	 * 获得订单标题
 	 */
 	private function getTitle($titleId){

@@ -55,8 +55,24 @@ class OrderModel extends CI_Model {
 	public function updStatus($orderId = "", $status = 0){
 		$upd_sql = "update " . self::ORDER_TABLE . " set or_status = ? where or_id = ?";
 		$this->db->query($upd_sql, array($status, $orderId));
-		echo $this->db->affected_rows();
 		return $this->db->affected_rows();
+	}
+	
+	/**
+	 * 根据订单编号获得订单详情
+	 * @param unknown_type $orderId
+	 */
+	public function getOrderById($orderId){
+		//查询订单
+		$order_sql = "select * from tbl_order where or_id = ?";
+		$order_res = $this->db->query($order_sql, array($orderId));
+		$orderInfo['order'] = $order_res->row_array();
+		
+		//查询详单
+		$order_detail_sql = "select * from tbl_orderdetail where or_id = ?";
+		$order_detail_res = $this->db->query($order_detail_sql, array($orderId));
+		$orderInfo['orderDetail'] = $order_detail_res->result_array();
+		return $orderInfo;
 	}
 }
 ?>

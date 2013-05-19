@@ -37,3 +37,31 @@
 	</table>
 </body>
 </html>
+<?php 
+/**
+ * 获得订单状态
+ * @param unknown_type $statusId
+ */
+function getOderState($statusId = 0){
+
+	switch($statusId){
+		case 0 :
+			$status = "待确认";
+			break;
+		case 1 :
+			$status = "备货中";
+			break;
+		case 2 :
+			$status = "发货中";
+			break;
+		case 3 :
+			$status = "已收货";
+			break;
+		case 4:
+			$status = "已作废";
+			break;
+	}
+
+	return $status;
+}
+?>

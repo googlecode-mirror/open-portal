@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>彩通</title>
-<link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/index.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('static/css/index.css') ?>" />
 </head>
 <body>
 	<div class="wrap">

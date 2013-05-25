@@ -39,6 +39,17 @@ class Item extends CI_Controller {
 	 */
 	function showlist($typeId = 0, $currency = "RMB", $orderBy = "name", $orderDirect = "asc"
 			, $page_size = 12, $page_index = 1) {
+		//redirect('ec/item/detail/item-1');
+		/*$this->detail("item-1");
+		return;
+		echo site_url("") . "<br>";
+		echo site_url("ec/item/detail"). "<br>";
+		echo base_url("images/icons/edit.png"). "<br>";
+		echo current_url() . "<br>";
+		echo uri_string() . "<br>";
+		echo index_page() . "<br>";  */
+		
+		
 		
 		$pageInfo    = array("page_index" => $page_index, "page_size" => $page_size);
 		$param = array(

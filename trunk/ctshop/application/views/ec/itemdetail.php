@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
-<link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/index.css" />
-<link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/goodInfo.css" />
+<title><?php echo $viewModel->item['zhName'] ?></title>
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('static/css/index.css') ?>" />
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('static/css/goodInfo.css') ?>" />
 </head>
 <body>
 	<div class="wrap">
@@ -63,8 +63,8 @@
 											<script>
 												function addToCart() {
 													var qty = document.getElementById("ctlQty").value;
-													var url = '<?php echo CTX_PATH ?>index.php/ec/cart/addItem/<?php echo $viewModel->item["itemId"] ?>/' + qty;
-													window.location.href = url 
+													var url = '<?php echo site_url('ec/cart/addItem') ?>/<?php echo $viewModel->item["itemId"] ?>/' + qty;
+													window.location.href = url; 
 												}
 											</script>
 										</div>

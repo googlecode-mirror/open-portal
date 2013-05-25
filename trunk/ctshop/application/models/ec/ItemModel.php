@@ -283,7 +283,7 @@ SQL;
 		}
 	}
 	
-	private function field($field, $value, $op="=") {
+	private function field($field, $value, $op="") {
 	
 		if (is_array($value)) {
 			$value = implode(",", $this->db->escape_str($value));

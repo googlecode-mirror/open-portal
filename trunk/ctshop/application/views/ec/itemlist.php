@@ -3,9 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>商品列表</title>
-<link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/index.css" />
-<link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/goodsList.css" />
-<script type="text/javascript" src="<?php echo CTX_PATH ?>static/script/jquery.js"></script>
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('static/css/index.css') ?>" />
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('static/css/goodsList.css') ?>" />
+<script type="text/javascript" src="<?php echo base_url('static/script/jquery.js') ?>"></script>
 </head>
 <body>
 	<?php 
@@ -81,10 +81,10 @@
 								foreach($viewModel->items as $k => $item): ?>
 								<div class="ct_goods_info">
 									 <ul>
-										<li><a href = "<?php echo CTX_PATH ?>index.php/ec/item/detail/<?php echo $item['gd_id'] ?>"><img src="<?php echo CTX_PATH ?>static/images/goods.gif" width="125" height="100" /></a></li>
+										<li><a href = "<?php echo site_url("ec/item/detail") ?>/<?php echo $item['gd_id'] ?>"><img src="<?php echo CTX_PATH ?>static/images/goods.gif" width="125" height="100" /></a></li>
 										<li><font color = "#38B0E3"><?php echo $item["gd_zhName"]?></font></li>
 										<li><?php echo $currency . " " . $item[$currency] ?> </li>
-										<li class = "add_to_cart"><a href = "shopCart.php">Add to Cart</a></li>
+										<li class = "add_to_cart"><a href = "<?php echo site_url("ec/cart/addItem/") ."/". $item['gd_id'] . "/1"  ?>">Add to Cart</a></li>
 									  </ul>
 								</div>
 								<?php endforeach; 

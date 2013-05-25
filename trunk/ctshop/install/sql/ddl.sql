@@ -114,8 +114,7 @@ create table tbl_user
    u_telephone          varchar(20),
    u_regdate			datetime,
    u_type               smallint,
-   u_lock               smallint,
-   u_del                smallint,
+   u_status               smallint,
    primary key (u_id)
 );
 

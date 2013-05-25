@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>购物车信息</title>
-<link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/index.css" />
-<link type="text/css" rel="stylesheet" href="<?php echo CTX_PATH ?>static/css/shopCart.css" />
-<script type="text/javascript" src="<?php echo CTX_PATH ?>static/script/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="<?php echo CTX_PATH ?>static/script/knockout-2.2.1.js"></script>
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('static/css/index.css') ?>" />
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('static/css/shopCart.css') ?>" />
+<script type="text/javascript" src="<?php echo base_url('static/script/jquery-1.9.1.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('static/script/knockout-2.2.1.js') ?>"></script>
 </head>
 
 <body>

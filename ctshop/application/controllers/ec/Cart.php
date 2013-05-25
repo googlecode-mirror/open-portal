@@ -11,6 +11,8 @@ class Cart extends CI_Controller {
 	 */
 	function __construct() {
 		parent::__construct();
+		$this->load->library("cart");
+		$this->load->library("FormSerial");
 	}
 	
 	/**
@@ -37,12 +39,9 @@ class Cart extends CI_Controller {
 				"qty"   => $qty
 		);
 		
-		$this->load->library("cart");
+		
 		$this->cart->insert($cartItem);
-		$cartLines = array(); // $this->cart->contents();
-		foreach ($this->cart->contents() as $key => $value) {
-			$cartLines[] = $value;
-		}
+		$cartLines = $this->_getCartLines();
 		//echo json_encode($cartLines);
 		$this->load->view('ec/cart', array(
 				"cartLines" => $cartLines
@@ -60,6 +59,36 @@ class Cart extends CI_Controller {
 	 * 提交订单
 	 */
 	public function submit() {
+		$order = array();
+		$order["address"]   = "" . $_POST["address"];
+		$order["telephone"] = "" . $_POST["telephone"];
+		$order["postcode"]  = "" . $_POST["postcode"];
+		$order["realname"]  = "" . $_POST["realname"];
+		$order["email"]     = "" . $_POST["email"];
+		
+		if (!$this->_validateOrder($order)) {
+			// 不应该走到这里, 前台JS会验证输入合法性
+			echo 'order info is not valid';
+			// TODO: 提示用户重新输入
+		}
+		
+		$cartLines = $this->_getCartLines();
+		if (empty($cartLines)) {
+			throw new Exception('there is no items in shopping cart');
+		}
+		
+		// 生成订单ID
+		$orderId = $this->FormSerial->nextId("order");
+		
+		if ($this->_createOrder($orderId, $order, $cartLines)) {
+			// 成功创建订单
+			$this->load->view('ec/orderCreateSuccess', array(
+					"orderId" => $orderId
+			));
+		} else {
+			// 创建订单失败
+			echo "Fail to create the order !";
+		}
 		
 	}
 	
@@ -76,6 +105,28 @@ class Cart extends CI_Controller {
 	public function updateQty() {
 		
 	}
+	
+	//
+	// private methods:
+	//
+	
+	private function _validateOrder(array $order) {
+		//TODO: validate the order
+		return true;
+	}
+	
+	private function _getCartLines() {
+		$cartLines = array(); // $this->cart->contents();
+		foreach ($this->cart->contents() as $key => $value) {
+			$cartLines[] = $value;
+		}
+		return $cartLines;
+	}
+	
+	private function _createOrder($orderId, $order, $orderDetail) {
+		
+	}
+	
  }
 
 ?>

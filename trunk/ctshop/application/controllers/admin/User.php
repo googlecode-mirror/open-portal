@@ -57,6 +57,16 @@ class User extends CI_Controller {
 		$data['titleName'] = "欢迎登录";
 		$this->load->view('admin/index', $data);
 	}
+	
+	/**
+	 * 获得用户列表
+	 */
+	public function userList($currPage = 1, $pageSize = 10){
+		$data['user'] = $this->UserModel->getUserList();
+		$data['page'] = 'userList';
+		$data['titleName'] = '用户列表';
+		$this->load->view('admin/index', $data);
+	}
 }
 
 ?>

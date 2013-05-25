@@ -1,6 +1,7 @@
 <?php
 
 class UserModel extends CI_Model {
+  const USER_TABLE = 'tbl_user';
 
   public function __construct()
   {
@@ -29,6 +30,33 @@ class UserModel extends CI_Model {
   	}
   	
   	return FALSE;
+  }
+  
+  /**
+   * 获得用户列表
+   */
+  public function getUserList($currPage = 1, $pageSize = 10){
+  	//获得总数据量
+  	$count_sql = "select count(*) as sum from ".self::USER_TABLE;
+  	$count_result = $this->db->query($count_sql);
+  	$count = $count_result->row()->sum;
+  	//计算偏移量
+  	$page_count = ceil($count / $pageSize);
+  	
+  	if($currPage > $page_count) $currPage = $page_count;
+  	if($currPage < 1) $currPage = 1;
+  	$start = ($currPage - 1) * $pageSize;
+  	//查询数据
+  	$user_sql = "select * from ".self::USER_TABLE . ' order by u_regdate desc '.
+  			'limit ' . $start . ',' . $pageSize;
+  	
+  	$data = $this->db->query($user_sql);
+  	$res['data'] = $data->result_array();
+  	$res['pageCount'] = $page_count;
+  	$res['count'] = $count;
+  	$res['currPage'] = $currPage;
+  	$res['pageSize'] = $pageSize;
+  	return $res;
   }
   	
   /**

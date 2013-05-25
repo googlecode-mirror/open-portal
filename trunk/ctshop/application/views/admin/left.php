@@ -156,16 +156,12 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-          <li><a href="http://www.865171.cn" target="main">信息分类</a></li>
-          <li><a href="http://www.865171.cn" target="main">信息类型</a></li>
-          <li><a href="http://www.865171.cn" target="main">资讯分类</a></li>
-          <li><a href="http://www.865171.cn" target="main">地区设置</a></li>
-          <li><a target="main" href="http://www.865171.cn">市场联盟</a></li>
-          <li><a href="http://www.865171.cn" target="main">商家类型</a></li>
-          <li><a href="http://www.865171.cn" target="main">商家星级</a></li>
-          <li><a href="http://www.865171.cn" target="main">商品分类</a></li>
-          <li><a href="http://www.865171.cn" target="main">商品类型</a></li>
-        </ul>
+          <li><a href="#" target="main">商品列表</a></li>
+          <li><a href="#" target="main">分类列表</a></li>
+          <li><a href="#" target="main">新增商品</a></li>
+          <li><a href="#" target="main">新增分类</a></li>
+          <li><a href="#" target="main">商品评论</a></li>
+         </ul>
       </div>
       <h1 class="type"><a href="javascript:void(0)">用户管理</a></h1>
       <div class="content">
@@ -175,18 +171,8 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-		  <li><a href="http://www.865171.cn" target="main">信息管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">张贴管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">增加商家</a></li>
-          <li><a href="http://www.865171.cn" target="main">管理商家</a></li>
-          <li><a href="http://www.865171.cn" target="main">发布资讯</a></li>
-          <li><a href="http://www.865171.cn" target="main">资讯管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">市场联盟</a></li>
-          <li><a href="http://www.865171.cn" target="main">名片管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">商城管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">商品管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">商城留言</a></li>
-          <li><a href="http://www.865171.cn" target="main">商城公告</a></li>
+		  <li><a href="<?=CTX_PATH ?>index.php/admin/User/userList">用户列表</a></li>
+		  <li><a href="#" target="main">新增用户</a></li>
         </ul>
       </div>
       <h1 class="type"><a href="javascript:void(0)">系统管理</a></h1>
@@ -197,12 +183,12 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-          <li><a href="http://www.865171.cn" target="main">会员管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">留言管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">回复管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">订单管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">举报管理</a></li>
-          <li><a href="http://www.865171.cn" target="main">评论管理</a></li>
+          <li><a href="#" target="main">会员管理</a></li>
+          <li><a href="#" target="main">留言管理</a></li>
+          <li><a href="#" target="main">回复管理</a></li>
+          <li><a href="#" target="main">订单管理</a></li>
+          <li><a href="#" target="main">举报管理</a></li>
+          <li><a href="#" target="main">评论管理</a></li>
         </ul>
       </div>
     </div>

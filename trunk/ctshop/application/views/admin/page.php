@@ -47,7 +47,7 @@
 <?php 
 	}
 ?>
-<select id = "page_size_list" style = "margin-top:5px;" onchange = "Order.changePage(this);">
+<select id = "page_size_list" style = "margin-top:5px;" onchange = "<?=$changePageMethod ?>">
 	<?php 
 		if($pageSize == 5){
 	?>

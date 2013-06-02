@@ -171,8 +171,9 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-		  <li><a href="<?=CTX_PATH ?>index.php/admin/User/userList">用户列表</a></li>
-		  <li><a href="#" target="main">新增用户</a></li>
+		  <li><a href="<?=CTX_PATH ?>index.php/admin/User/userList/0/0">普通用户</a></li>
+		  <li><a href="<?=CTX_PATH ?>index.php/admin/User/userList/0/1">管理员</a></li>
+		  <li><a href="<?=CTX_PATH ?>index.php/admin/User/userList/1">已锁定用户</a></li>
         </ul>
       </div>
       <h1 class="type"><a href="javascript:void(0)">系统管理</a></h1>

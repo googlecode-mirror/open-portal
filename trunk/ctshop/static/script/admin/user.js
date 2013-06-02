@@ -31,5 +31,33 @@ var User = {
 		if(this.valiQuery()){
 			jQuery("#user_query").submit();
 		}
+	}, 
+
+	/**
+	 * 锁定用户
+	 */
+	updStatus : function(url, srcStatus){
+		var notMsg = "";
+		
+		if(srcStatus == 0){
+			notMsg = "您确定要解锁该用户吗？";
+		}else if(srcStatus == 1){
+			notMsg = "您确定要锁定该用户吗？";
+		}else if(srcStatus == 2){
+			notMsg = "您确定要删除该用户吗？";
+		}
+		
+		if(confirm(notMsg)){
+			document.location = url; 
+		}
+	},
+	
+	/**
+	 * 设置管理员
+	 */
+	setAdmin : function(url, userName){
+		if(confirm("您确定要设置" + userName + "为管理员吗？")){
+			document.location = url;
+		}
 	}
 };

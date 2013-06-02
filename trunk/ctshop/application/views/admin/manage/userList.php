@@ -24,9 +24,9 @@
 <table class  = "manage_tb" cellspacing = "0" cellpadding = "0">
 	<thead>
 		<tr>
-			<th width = "110">用户编号</th>
+			<th width = "90">用户编号</th>
 			<th width = "150">用户名</th>
-			<th width = "150">用户国家</th>
+			<th width = "140">用户类型</th>
 			<th width = "170">注册时间</th>
 			<th>操作</th>
 		</tr>
@@ -39,9 +39,41 @@
 		<tr>
 			<td widtd = "120"><?=$us['u_id'] ?></td>
 			<td widtd = "120"><?=$us['u_name'] ?></td>
-			<td widtd = "150"><?=$us['u_country'] ?></td>
+			<td widtd = "150"><?=$us['u_type'] == 0 ? "普通用户" : "管理员" ?></td>
 			<td widtd = "80"><?=$us['u_regdate'] ?></td>
-			<td>[详细]&nbsp;[锁定]&nbsp;[删除]&nbsp;[设为管理员]</td>
+			<td>
+			
+				[<a href = "<?=CTX_PATH ?>index.php/admin/User/getUserDetail/<?=$us['u_id'] ?>">详细</a>]
+				
+				&nbsp;
+				<?php 
+					if($us['u_name'] != $_SESSION['adminUser']){
+						if($us['u_status'] == 0){
+				?>
+				[<a href = "javascript:void(0);" onclick = "User.updStatus('<?=CTX_PATH."index.php/admin/User/updStatus/".$us['u_id']."/".$us['u_status']."/1/".$us['u_type'] ?>', 1);">锁定</a>]
+				<?php 
+						}else{
+				?>
+				[<a href = "javascript:void(0);" onclick = "User.updStatus('<?=CTX_PATH."index.php/admin/User/updStatus/".$us['u_id']."/".$us['u_status']."/0/".$us['u_type'] ?>', 0);">解除锁定</a>]
+				<?php }}?>
+				&nbsp;
+			
+				<?php 
+					if($us['u_name'] != $_SESSION['adminUser']){
+				?>
+				[<a href = "javascript:void(0);" onclick = "User.updStatus('<?=CTX_PATH."index.php/admin/User/updStatus/".$us['u_id']."/".$us['u_status']."/2/".$us['u_type'] ?>', 2);">删除</a>]
+				<?php 
+					}
+				?>
+				&nbsp;
+				<?php 
+					if($us['u_type'] == 0 && $us['u_status'] == 0){
+				?>
+				[<a href = "javascript:void(0);" onclick = "User.setAdmin('<?=CTX_PATH."index.php/admin/User/setAdmin/".$us['u_id'] ?>', '<?=$us['u_name'] ?>');">设为管理员</a>]
+				<?php 
+					}
+				?>
+			</td>
 		</tr>
 		<?php 
 			}
@@ -58,5 +90,5 @@
 				?>
 			</td>
 		</tr>
-	</tfoot>
+	</tfoot>	
 </table>

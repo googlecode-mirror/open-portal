@@ -21,7 +21,7 @@ class UserModel extends CI_Model {
   	
   	$login_sql = "select count(*) as res FROM tbl_user " 
 	 . "where u_name = ? and u_password = ? " 
-  	 . " and u_type = 1 and u_lock = 0 and u_del = 0";
+  	 . " and u_type = 1 and u_status = 0";
   	
   	$query = $this->db->query($login_sql, array($userName, md5($userPwd)));
   	
@@ -35,8 +35,12 @@ class UserModel extends CI_Model {
   /**
    * 获得用户列表
    */
-  public function getUserList($currPage = 1, $pageSize = 10, $userName = "", $type = 0, $status = 0){
-  	$condition = ' where u_type = '.$type.' and u_status = '.$status;
+  public function getUserList($currPage = 1, $pageSize = 10, $userName = NULL, $type, $status = 0){
+  	$condition = ' where u_status = '.$status;
+  	
+  	if($type != NULL){
+  		$condition.=" and u_type =".$type;
+  	}
   	
   	if(!empty($userName)){
   		$condition .= ' and u_name like \'%'.$userName.'%\'';
@@ -62,6 +66,38 @@ class UserModel extends CI_Model {
   	$res['currPage'] = $currPage;
   	$res['pageSize'] = $pageSize;
   	return $res;
+  }
+  
+  /**
+   * 修改用户状态
+   * @param unknown_type $userId 用户编号
+   * @param unknown_type $status 用户状态
+   */
+  public function updUserStatus($userId, $status){
+  	 $upd_sql = "update ".self::USER_TABLE." set u_status= ? where u_id = ?";
+  	 $this->db->query($upd_sql, array($status, $userId));
+  	 return $this->db->affected_rows();
+  }
+  
+  /**
+   * 设置用户为管理员
+   * @param unknown_type $userId用户编号
+   */
+  public function setAdmin($userId){
+  	 if(empty($userId)) return 0;
+  	 
+  	 $set_sql = "update ".self::USER_TABLE." set u_type = 1 where u_id = ?";
+  	 $this->db->query($set_sql, array($userId));
+  	 return $this->db->affected_rows();
+  }
+  /**
+   * 获得用户信息
+   * @param $userId 用户编号
+   */
+  public function getUserInfo($userId){
+  	  $query_sql = "select * from ".self::USER_TABLE. " where u_id = ?";
+  	  $user_res = $this->db->query($query_sql, array($userId));
+  	  return $user_res->row_array();
   }
   	
   /**

@@ -74,15 +74,15 @@
 			<?php 
 				if($or['or_status'] == 3){
 			?>
-			<td>[<a href = "<?=CTX_PATH."index.php/admin/Order/orderInfo/".$or['or_id'] ?>" >查看详细</a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id']."/".$or['or_status']."/4" ?>', '作废');">作废</a>]</td>
+			<td>[<a href = "<?=CTX_PATH."index.php/admin/Order/orderInfo/".$or['or_id'] ?>" >详细</a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id']."/".$or['or_status']."/4" ?>', '作废');">作废</a>]</td>
 			<?php 
 				}else if($or['or_status'] == 4){
 			?>
-			<td>[<a href = "<?=CTX_PATH."index.php/admin/Order/orderInfo/".$or['or_id'] ?>">查看详细</a>]</td>
+			<td>[<a href = "<?=CTX_PATH."index.php/admin/Order/orderInfo/".$or['or_id'] ?>">详细</a>]</td>
 			<?php 
 				}else{
 			?>
-			<td>[<a href = "<?=CTX_PATH."index.php/admin/Order/orderInfo/".$or['or_id'] ?>">查看详细</a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id']."/".$or['or_status']."/".$res_status['status'] ?>', '<?=$res_status['text']; ?>');"><?=$res_status['text']; ?></a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id']."/".$or['or_status']."/4" ?>', '作废');">作废</a>]</td>
+			<td>[<a href = "<?=CTX_PATH."index.php/admin/Order/orderInfo/".$or['or_id'] ?>">详细</a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id']."/".$or['or_status']."/".$res_status['status'] ?>', '<?=$res_status['text']; ?>');"><?=$res_status['text']; ?></a>]&nbsp;&nbsp;[<a href = "javascript:void(0);" onclick = "Order.updOrderStatus('<?=CTX_PATH."index.php/admin/Order/updOder/".$or['or_id']."/".$or['or_status']."/4" ?>', '作废');">作废</a>]</td>
 			<?php 
 				}
 			?>

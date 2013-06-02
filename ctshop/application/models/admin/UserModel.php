@@ -35,9 +35,14 @@ class UserModel extends CI_Model {
   /**
    * 获得用户列表
    */
-  public function getUserList($currPage = 1, $pageSize = 10){
+  public function getUserList($currPage = 1, $pageSize = 10, $userName = "", $type = 0, $status = 0){
+  	$condition = ' where u_type = '.$type.' and u_status = '.$status;
+  	
+  	if(!empty($userName)){
+  		$condition .= ' and u_name like \'%'.$userName.'%\'';
+  	}
   	//获得总数据量
-  	$count_sql = "select count(*) as sum from ".self::USER_TABLE;
+  	$count_sql = "select count(*) as sum from ".self::USER_TABLE.$condition;
   	$count_result = $this->db->query($count_sql);
   	$count = $count_result->row()->sum;
   	//计算偏移量
@@ -47,7 +52,7 @@ class UserModel extends CI_Model {
   	if($currPage < 1) $currPage = 1;
   	$start = ($currPage - 1) * $pageSize;
   	//查询数据
-  	$user_sql = "select * from ".self::USER_TABLE . ' order by u_regdate desc '.
+  	$user_sql = "select * from ".self::USER_TABLE.$condition. ' order by u_regdate desc '.
   			'limit ' . $start . ',' . $pageSize;
   	
   	$data = $this->db->query($user_sql);

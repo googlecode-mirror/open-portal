@@ -60,11 +60,36 @@ class User extends CI_Controller {
 	
 	/**
 	 * 获得用户列表
+	 * @param unknown_type $type 0 普通用户 1 管理员
+	 * @param unknown_type $status 0 正常 1:锁定 2:删除
+	 * @param unknown_type $currPage 当前页
+	 * @param unknown_type $pageSize 每页显示条数
+	 * @param unknown_type $userName 用户名
 	 */
-	public function userList($currPage = 1, $pageSize = 10){
-		$data['user'] = $this->UserModel->getUserList();
+	public function userList($status = 0, $type = 0, $currPage = 1, $pageSize = 10, $userName = ""){
+		$this->load->helper('form');
+		$userName_input = $this->input->post('userName');
+		$type_input = $this->input->post('type');
+		$pageSize_input = $this->input->post('pageSize');
+		
+		if(!empty($userName_input)){
+			$userName = $userName_input;
+		}
+		
+		if(!empty($type_input)){
+			$type = $type_input;
+		}
+		
+		if(!empty($pageSize_input)){
+			$pageSize = $pageSize_input;
+		}
+		
+		$data['user'] = $this->UserModel->getUserList($currPage, $pageSize, $userName, $type, $status);
 		$data['page'] = 'userList';
 		$data['titleName'] = '用户列表';
+		$data['userName'] = $userName;
+		$data['type'] = $type;
+		$data['status'] = $status;
 		$this->load->view('admin/index', $data);
 	}
 }

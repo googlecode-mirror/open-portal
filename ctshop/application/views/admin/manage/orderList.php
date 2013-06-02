@@ -104,6 +104,7 @@ blank;
 				<td colspan="6">
 					<?php 
 						$page_url = CTX_PATH."index.php/admin/Order/orderList/$titleId";
+						$changePageMethod = "Order.changePage(this);";
 						require_once APPPATH.'views/admin/page.php';
 					?>
 				</td>

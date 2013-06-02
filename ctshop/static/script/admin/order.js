@@ -41,4 +41,4 @@ var Order = {
 			document.location = url;
 		}
 	}
-}
+};

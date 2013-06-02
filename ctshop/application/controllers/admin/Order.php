@@ -51,7 +51,7 @@ class Order extends CI_Controller {
 	 * 
 	 * @param unknown_type $status 要修改的目标状态
 	 */
-	public function updOder($orderId, $srcStatus = 0, $resStatus = 0){
+	public function updOder($orderId, $srcStatus, $resStatus){
 		$res = FALSE;
 		
 		if(empty($orderId) || empty($orderId)){

@@ -66,7 +66,7 @@ class User extends CI_Controller {
 	 * @param unknown_type $pageSize 每页显示条数
 	 * @param unknown_type $userName 用户名
 	 */
-	public function userList($status = 0, $type = 0, $currPage = 1, $pageSize = 10, $userName = ""){
+	public function userList($status = 0, $type = NULL, $currPage = 1, $pageSize = 10, $userName = ""){
 		$this->load->helper('form');
 		$userName_input = $this->input->post('userName');
 		$type_input = $this->input->post('type');
@@ -86,11 +86,77 @@ class User extends CI_Controller {
 		
 		$data['user'] = $this->UserModel->getUserList($currPage, $pageSize, $userName, $type, $status);
 		$data['page'] = 'userList';
-		$data['titleName'] = '用户列表';
+		$data['titleName'] = $this->getTitleName($status,  $type);
 		$data['userName'] = $userName;
 		$data['type'] = $type;
 		$data['status'] = $status;
 		$this->load->view('admin/index', $data);
+	}
+	
+	/**
+	 * 修改用户状态
+	 * @param unknown_type $userId  用户编号
+	 * @param unknown_type $status  用户状态
+	 */
+	public function updStatus($userId, $srcStatus, $resStatus, $type){
+		$updRes = $this->UserModel->updUserStatus($userId, $resStatus);
+		
+		if($updRes > 0){
+			$data['msg'] = "操作成功,正在返回用户列表";
+			$data['to_url'] = 'admin/User/userList/'.$srcStatus."/".$type;
+		}else{
+			$data['msg'] = "操作失败,正在返回用户列表";
+			$data['to_url'] = 'admin/User/userList/'.$srcStatus."/".$type;
+		}
+		
+		$this->load->view('admin/result', $data);
+	}
+	
+	/**
+	 * 设置用户为管理员
+	 * @param unknown_type $userId 用户编号
+	 */
+	public function setAdmin($userId){
+		$setRes = $this->UserModel->setAdmin($userId);
+		
+		if($setRes > 0){
+			$data['msg'] = "操作成功,正在返回用户列表";
+			$data['to_url'] = 'admin/User/userList/0/0';
+		}else{
+			$data['msg'] = "操作失败,正在返回用户列表";
+			$data['to_url'] = 'admin/User/userList/0/1';
+		}
+		
+		$this->load->view('admin/result', $data);
+	}
+	
+	/**
+	 * 获得单个用户信息 
+	 */
+	public function getUserDetail($userId){
+		$data['userInfo'] = $this->UserModel->getUserInfo($userId);
+		$data['titleName'] = "用户详细";
+		$data['page'] = 'userDetail';
+		$this->load->view('admin/index', $data);
+	}
+	
+	/**
+	 * 获得标题名称
+	 * @param unknown_type $status 状态
+	 * @param unknown_type $type 类型
+	 */
+	private function getTitleName($status = 0, $type = 0){
+		if($status == 0){
+			if($type == 0){
+				$titleName = "普通用户";
+			}else if($type == 1){
+				$titleName = "管理员";
+			}
+		}else if($status == 1){
+			$titleName = "已锁定用户";
+		}
+		
+		return $titleName;
 	}
 }
 

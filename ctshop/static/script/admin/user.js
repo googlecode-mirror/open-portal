@@ -48,7 +48,18 @@ var User = {
 		}
 		
 		if(confirm(notMsg)){
-			document.location = url; 
+			jQuery.ajax({
+				url : url,
+				async : false,
+				success : function(res){
+					if(res > 0){
+						alert("操作成功！");
+						window.location.reload();
+					}else{
+						alert("操作失败！");
+					}
+				}
+			});
 		}
 	},
 	
@@ -56,8 +67,19 @@ var User = {
 	 * 设置管理员
 	 */
 	setAdmin : function(url, userName){
-		if(confirm("您确定要设置" + userName + "为管理员吗？")){
-			document.location = url;
+		if(confirm("设置成管理员之后，该用户可以登录后台管理，您确定要设置" + userName + "为管理员吗？")){
+			jQuery.ajax({
+				url : url,
+				async : false,
+				success : function(res){
+					if(res > 0){
+						alert("管理员设置成功！");
+						window.location.reload();
+					}else{
+						alert("操作失败！");
+					}
+				}
+			});
 		}
 	}
 };

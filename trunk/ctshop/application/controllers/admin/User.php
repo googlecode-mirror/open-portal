@@ -98,18 +98,9 @@ class User extends CI_Controller {
 	 * @param unknown_type $userId  用户编号
 	 * @param unknown_type $status  用户状态
 	 */
-	public function updStatus($userId, $srcStatus, $resStatus, $type){
+	public function updStatus($userId, $resStatus){
 		$updRes = $this->UserModel->updUserStatus($userId, $resStatus);
-		
-		if($updRes > 0){
-			$data['msg'] = "操作成功,正在返回用户列表";
-			$data['to_url'] = 'admin/User/userList/'.$srcStatus."/".$type;
-		}else{
-			$data['msg'] = "操作失败,正在返回用户列表";
-			$data['to_url'] = 'admin/User/userList/'.$srcStatus."/".$type;
-		}
-		
-		$this->load->view('admin/result', $data);
+		echo $updRes;
 	}
 	
 	/**
@@ -118,16 +109,7 @@ class User extends CI_Controller {
 	 */
 	public function setAdmin($userId){
 		$setRes = $this->UserModel->setAdmin($userId);
-		
-		if($setRes > 0){
-			$data['msg'] = "操作成功,正在返回用户列表";
-			$data['to_url'] = 'admin/User/userList/0/0';
-		}else{
-			$data['msg'] = "操作失败,正在返回用户列表";
-			$data['to_url'] = 'admin/User/userList/0/1';
-		}
-		
-		$this->load->view('admin/result', $data);
+		echo $setRes;
 	}
 	
 	/**

@@ -50,18 +50,18 @@
 					if($us['u_name'] != $_SESSION['adminUser']){
 						if($us['u_status'] == 0){
 				?>
-				[<a href = "javascript:void(0);" onclick = "User.updStatus('<?=CTX_PATH."index.php/admin/User/updStatus/".$us['u_id']."/".$us['u_status']."/1/".$us['u_type'] ?>', 1);">锁定</a>]
+				[<a href = "javascript:void(0);" onclick = "User.updStatus('<?=CTX_PATH."index.php/admin/User/updStatus/".$us['u_id']."/1" ?>', 1);">锁定</a>]
 				<?php 
 						}else{
 				?>
-				[<a href = "javascript:void(0);" onclick = "User.updStatus('<?=CTX_PATH."index.php/admin/User/updStatus/".$us['u_id']."/".$us['u_status']."/0/".$us['u_type'] ?>', 0);">解除锁定</a>]
+				[<a href = "javascript:void(0);" onclick = "User.updStatus('<?=CTX_PATH."index.php/admin/User/updStatus/".$us['u_id']."/0" ?>', 0);">解除锁定</a>]
 				<?php }}?>
 				&nbsp;
 			
 				<?php 
 					if($us['u_name'] != $_SESSION['adminUser']){
 				?>
-				[<a href = "javascript:void(0);" onclick = "User.updStatus('<?=CTX_PATH."index.php/admin/User/updStatus/".$us['u_id']."/".$us['u_status']."/2/".$us['u_type'] ?>', 2);">删除</a>]
+				[<a href = "javascript:void(0);" onclick = "User.updStatus('<?=CTX_PATH."index.php/admin/User/updStatus/".$us['u_id']."/2" ?>', 2);">删除</a>]
 				<?php 
 					}
 				?>
@@ -77,7 +77,15 @@
 		</tr>
 		<?php 
 			}
-		}
+		}else{
+				echo <<<blank
+				<tr>
+					<th colspan = "6" style = "font-size:20px;height:100px;">
+						没有符合条件的用户！					
+					</th>
+				</tr>
+blank;
+			}
 		?>
 	</tbody>
 	<tfoot>

@@ -51,7 +51,7 @@ class Order extends CI_Controller {
 	 * 
 	 * @param unknown_type $status 要修改的目标状态
 	 */
-	public function updOder($orderId, $srcStatus, $resStatus){
+	public function updOder($orderId, $resStatus){
 		$res = FALSE;
 		
 		if(empty($orderId) || empty($orderId)){
@@ -66,15 +66,7 @@ class Order extends CI_Controller {
 			}
 		}
 		
-		if($res){
-			$data['msg'] = "订单状态修改成功,正在返回订单列表";
-			$data['to_url'] = 'admin/Order/orderList/'.$resStatus;
-		}else{
-			$data['msg'] = "修改订单状态失败，正在返回订单列表";
-			$data['to_url'] = 'admin/Order/orderList/'.$srcStatus;
-		}
-		
-		$this->load->view('admin/result', $data);
+		echo $res;
 	}
 	
 	/**

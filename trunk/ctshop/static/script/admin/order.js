@@ -38,7 +38,18 @@ var Order = {
 	 */
 	updOrderStatus : function(url, status) {
 		if(confirm("您确定要修改订单状态为" + status + "吗")){
-			document.location = url;
+			jQuery.ajax({
+				url : url,
+				async : false,
+				success : function(res){
+					if(res){
+						alert("操作成功！");
+						window.location.reload();
+					}else{
+						alert("操作失败！");
+					}
+				}
+			});
 		}
 	}
 };

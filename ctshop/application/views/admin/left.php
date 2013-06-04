@@ -156,7 +156,7 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-          <li><a href="#" target="main">商品列表</a></li>
+          <li><a href="<?=CTX_PATH ?>index.php/admin/Good/goodList">商品列表</a></li>
           <li><a href="#" target="main">分类列表</a></li>
           <li><a href="#" target="main">新增商品</a></li>
           <li><a href="#" target="main">新增分类</a></li>

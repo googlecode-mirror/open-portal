@@ -45,7 +45,7 @@ class UserModel extends CI_Model {
 		$data = array (
 				'u_id' => $maxId,
 				'u_name' => $param["userName"],
-				'u_password' => $param["userPwd"], 
+				'u_password' => md5($param["userPwd"]), 
 				'u_email' => $param["email"],
 				'u_country' => $param["country"],
 				'u_telephone' => $param["telNo"], 
@@ -70,7 +70,7 @@ class UserModel extends CI_Model {
 	public function login($param) {
 		$data = array (
 				'u_name' => $param["userName"],
-				'u_password' => $param["userPwd"],
+				'u_password' => md5($param["userPwd"]),
 		);
 	
 		$query = $this->db->get_where('user', $data);

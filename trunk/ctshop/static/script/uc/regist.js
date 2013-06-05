@@ -121,7 +121,6 @@ function submitForm() {
 				    	"telNo":telNo
 			    	},
 			    success: function(msg) {
-			    	alert(msg);
 			    	if (msg == '1') {
 			    		//注册成功跳转到首页
 						//$this->load->view("uc/regist");

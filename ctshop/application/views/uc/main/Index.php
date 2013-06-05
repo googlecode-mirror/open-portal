@@ -8,12 +8,13 @@
 $user = $this->session->userdata("user");//获取session中的用户
 
 if ($user != null) {
-	if ($user["u_lock"] == 1) {
+	if ($user["u_status"] == 1) {
 		echo 'user locked!';
-	} else if ($user["u_del"] == 1) {
+	} else if ($user["u_status"] == 2) {
 		echo 'user deleted!';
 	} else {
 		echo '欢迎'.$user["u_name"];
+		echo '<br/>&nbsp;&nbsp;&nbsp;<a href="'.CTX_PATH.'index.php/uc/Order/orderList">用户中心</a>';
 	}
 } else {
 	require_once APPPATH.'views/uc/login.php';

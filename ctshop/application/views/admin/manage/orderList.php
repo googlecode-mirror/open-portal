@@ -32,7 +32,7 @@
 	$pageCount = $order["pageCount"];
 	$count = $order["count"];
 ?>
-<?php echo form_open('admin/Order/orderList', array('id' => 'order_query')) ?>
+<?php echo form_open('uc/Order/orderList', array('id' => 'order_query')) ?>
 <table height = "60">
   <tr>
   	<td>按订单号查询：</td>
